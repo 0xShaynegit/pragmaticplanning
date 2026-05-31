@@ -195,6 +195,62 @@
     </div>
   </section>
 
+  <!-- FEASIBILITY ENGINE -->
+  <section id="feasibility" class="feasibility-section mono-line-b">
+    <div class="max-w-editorial mx-auto">
+
+      <!-- Header -->
+      <div class="feasibility-header">
+        <span class="feasibility-header-tag">[Engine]</span>
+        <h2 class="feasibility-header-title">Feasibility Engine</h2>
+        <span class="feasibility-header-sub">Enter a property address to get your complexity score.</span>
+      </div>
+
+      <!-- Address input row -->
+      <div class="feasibility-input-row" id="feasibility-input-row">
+        <div class="feasibility-address-wrap">
+          <input
+            type="text"
+            id="feasibility-address"
+            placeholder="Start typing a Queenstown or Wanaka address..."
+            autocomplete="off"
+            aria-label="Property address for feasibility assessment"
+          >
+        </div>
+        <button class="feasibility-submit" id="feasibility-submit" aria-label="Assess this property">
+          Assess Property
+        </button>
+      </div>
+
+      <!-- Error state -->
+      <div class="feasibility-error" id="feasibility-error" role="alert" aria-live="polite"></div>
+
+      <!-- Result panel (shown after scoring) -->
+      <div class="feasibility-result" id="feasibility-result" aria-live="polite">
+
+        <!-- Score panel -->
+        <div class="score-panel">
+          <span class="score-label-tag">[Complexity Score]</span>
+          <p class="score-number" id="score-number">--</p>
+          <p class="score-band" id="score-band"></p>
+          <div class="score-meter" role="meter" aria-label="Complexity score meter">
+            <div class="score-meter-fill" id="score-meter-fill"></div>
+          </div>
+        </div>
+
+        <!-- Recommendation panel -->
+        <div class="recommendation-panel">
+          <p class="rec-address" id="rec-address"></p>
+          <h3 class="rec-headline" id="rec-headline"></h3>
+          <p class="rec-body" id="rec-body"></p>
+          <a href="#contact" class="rec-cta" id="rec-cta"></a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- SERVICES -->
   <section id="services" class="mono-line-b py-24">
     <div class="max-w-editorial mx-auto px-6">

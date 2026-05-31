@@ -366,6 +366,274 @@
   }
 }
 
+/* Feasibility Engine */
+.feasibility-section {
+  padding: 0;
+}
+
+.feasibility-header {
+  padding: 3rem 2.5rem 2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  border-bottom: 0.5px solid #0A0A0A;
+}
+
+.feasibility-header-tag {
+  display: inline-block;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background-color: #005F4B;
+  color: #FCFAF2;
+  padding: 0.25rem 0.5rem;
+}
+
+.feasibility-header-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1;
+  color: #0A0A0A;
+  text-transform: uppercase;
+}
+
+.feasibility-header-sub {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  color: rgba(10, 10, 10, 0.5);
+  letter-spacing: 0.05em;
+  margin-left: auto;
+}
+
+.feasibility-input-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0;
+  border-bottom: 0.5px solid #0A0A0A;
+}
+
+.feasibility-address-wrap {
+  position: relative;
+  border-right: 0.5px solid #0A0A0A;
+}
+
+#feasibility-address {
+  width: 100%;
+  padding: 1.5rem 2.5rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: #0A0A0A;
+  background: transparent;
+  border: none;
+  outline: none;
+  letter-spacing: 0.02em;
+}
+
+#feasibility-address::placeholder {
+  color: rgba(10, 10, 10, 0.35);
+}
+
+.feasibility-submit {
+  padding: 1.5rem 2.5rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FCFAF2;
+  background-color: #0A0A0A;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.feasibility-submit:hover {
+  background-color: #005F4B;
+}
+
+/* Result panel (hidden until score calculated) */
+.feasibility-result {
+  display: none;
+  grid-template-columns: 240px 1fr;
+  border-bottom: 0.5px solid #0A0A0A;
+}
+
+.feasibility-result.is-visible {
+  display: grid;
+}
+
+.score-panel {
+  padding: 3rem 2.5rem;
+  border-right: 0.5px solid #0A0A0A;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.score-label-tag {
+  display: inline-block;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border: 0.5px solid #0A0A0A;
+}
+
+.score-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #0A0A0A;
+}
+
+.score-band {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.score-band--low    { color: #005F4B; }
+.score-band--medium { color: #B45309; }
+.score-band--high   { color: #991B1B; }
+
+/* Score meter bar */
+.score-meter {
+  width: 100%;
+  height: 3px;
+  background-color: rgba(10, 10, 10, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.score-meter-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #0A0A0A;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.recommendation-panel {
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.rec-address {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: rgba(10, 10, 10, 0.45);
+  text-transform: uppercase;
+}
+
+.rec-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0A0A0A;
+}
+
+.rec-body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: rgba(10, 10, 10, 0.65);
+  max-width: 480px;
+}
+
+.rec-cta {
+  display: inline-block;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FCFAF2;
+  background-color: #005F4B;
+  padding: 0.875rem 1.75rem;
+  border: 0.5px solid #005F4B;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.rec-cta:hover {
+  background-color: transparent;
+  color: #005F4B;
+}
+
+.rec-cta--standard {
+  background-color: #0A0A0A;
+  border-color: #0A0A0A;
+}
+
+.rec-cta--standard:hover {
+  background-color: transparent;
+  color: #0A0A0A;
+}
+
+/* Error state */
+.feasibility-error {
+  display: none;
+  padding: 1rem 2.5rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.75rem;
+  color: #991B1B;
+  letter-spacing: 0.05em;
+  border-bottom: 0.5px solid #0A0A0A;
+}
+
+.feasibility-error.is-visible {
+  display: block;
+}
+
+/* Loading state on input row */
+.feasibility-input-row.is-loading .feasibility-submit {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .feasibility-input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .feasibility-address-wrap {
+    border-right: none;
+    border-bottom: 0.5px solid #0A0A0A;
+  }
+
+  .feasibility-result {
+    grid-template-columns: 1fr;
+  }
+
+  .score-panel {
+    border-right: none;
+    border-bottom: 0.5px solid #0A0A0A;
+  }
+
+  .feasibility-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .feasibility-header-sub {
+    margin-left: 0;
+  }
+}
+
 /* Custom Cursor */
 .cursor {
   position: fixed;
