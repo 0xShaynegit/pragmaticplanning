@@ -1,7 +1,10 @@
 node_modules/
+.git/
+.wrangler/
 Old Content/
-.md/
 docs/
-node_modules/
+.md/
+tailwind.config.js
 package.json
 package-lock.json
+assets/css/input.css
