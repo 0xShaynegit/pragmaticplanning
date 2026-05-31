@@ -59,6 +59,11 @@
 </head>
 <body class="bg-canvas text-ink font-sans">
 
+  <!-- Cursor -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-label" aria-hidden="true"></div>
+
   <!-- NAV -->
   <nav class="mono-line-b sticky top-0 z-50 bg-canvas">
     <div class="max-w-editorial mx-auto px-6 flex items-center justify-between h-14">
@@ -134,7 +139,7 @@
       <div class="outcomes-grid">
 
         <!-- Compliance Pack -->
-        <div class="outcome-card">
+        <div class="outcome-card" data-cursor-label="VIEW COMPLIANCE PACK">
           <span class="outcome-tag outcome-tag--product">[Product]</span>
           <h2 class="outcome-title">The Compliance Pack</h2>
           <p class="outcome-body">
@@ -146,7 +151,7 @@
         </div>
 
         <!-- Subdivision Certainty -->
-        <div class="outcome-card">
+        <div class="outcome-card" data-cursor-label="VIEW OUTCOME">
           <span class="outcome-tag outcome-tag--outcome">[Outcome]</span>
           <h2 class="outcome-title">Subdivision Certainty</h2>
           <p class="outcome-body">
@@ -158,7 +163,7 @@
         </div>
 
         <!-- The Pragmatic Path -->
-        <div class="outcome-card">
+        <div class="outcome-card" data-cursor-label="START PROJECT">
           <span class="outcome-tag outcome-tag--process">[Process]</span>
           <h2 class="outcome-title">The Pragmatic Path</h2>
           <p class="outcome-body">
@@ -172,7 +177,7 @@
       </div>
 
       <!-- KNOWLEDGE MOAT BLOCK -->
-      <div class="moat-block mono-line">
+      <div class="moat-block mono-line" data-cursor-label="ABOUT RICHARD KEMP">
         <div>
           <span class="moat-tag">[The Moat]</span>
           <p class="moat-headline">15 Years<br>Inside the<br>System.</p>
@@ -210,6 +215,11 @@
       <p class="font-serif text-5xl font-bold mb-2">Contact</p>
     </div>
   </section>
+
+  <!-- GSAP (local) -->
+  <script src="assets/js/gsap.min.js"></script>
+  <!-- Cursor -->
+  <script src="assets/js/cursor.js"></script>
 
   <!-- FOOTER -->
   <footer class="mono-line py-12">
