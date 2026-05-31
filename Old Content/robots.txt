@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://pragmaticplanning.co.nz/sitemap.xml
