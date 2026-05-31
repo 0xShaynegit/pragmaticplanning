@@ -26,14 +26,12 @@
   <meta name="twitter:description" content="Resource consents approved in 8-12 weeks. 98% approval rate. 250+ projects granted.">
   <meta name="twitter:image" content="https://pragmaticplanning.co.nz/assets/img/pragmaticplanning-social-share.webp">
 
+  <!-- Font preloads -->
+  <link rel="preload" href="assets/fonts/PlayfairDisplay-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+
   <!-- Compiled Tailwind CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
-
-  <!-- Google Places API - replace YOUR_GOOGLE_PLACES_API_KEY before deploy -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_PLACES_API_KEY&libraries=places&loading=async"
-    defer>
-  </script>
 
   <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
@@ -192,6 +190,8 @@
       </div>
     </div>
   </nav>
+
+  <main>
 
   <!-- HERO: GRANTED -->
   <section id="hero" class="hero-section mono-line-b">
@@ -654,6 +654,8 @@
   <!-- Animations -->
   <script src="assets/js/animate.js"></script>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="mono-line py-10">
     <div class="max-w-editorial mx-auto px-6">
@@ -673,8 +675,8 @@
             <a href="https://www.linkedin.com/in/richardkempnz" target="_blank" rel="noopener" class="hover:opacity-100 transition-opacity">LinkedIn</a>
           </div>
           <div style="text-align:center;margin-top:.25rem;">
-            <a href="privacy-policy.html" class="hover:opacity-100 transition-opacity">Privacy Policy</a>
-            <a href="disclaimer.html" class="hover:opacity-100 transition-opacity">Disclaimer</a>
+            <a href="privacy-policy.html" class="hover:opacity-100 transition-opacity" style="padding:.5rem .75rem;display:inline-block;">Privacy Policy</a>
+            <a href="disclaimer.html" class="hover:opacity-100 transition-opacity" style="padding:.5rem .75rem;display:inline-block;">Disclaimer</a>
           </div>
         </div>
 

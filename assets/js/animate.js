@@ -35,36 +35,40 @@
   }
 
   // ── HERO HEADLINE WORD SPLIT ────────────────────────────────────────
+  // Double rAF ensures first paint completes before GSAP hides anything (LCP fix)
   var heroHeadline = document.querySelector('.hero-headline');
   if (heroHeadline) {
-    var raw = heroHeadline.textContent.trim();
-    var words = raw.split(' ');
-    heroHeadline.innerHTML = words.map(function (w) {
-      return '<span style="display:inline-block;overflow:hidden;vertical-align:bottom;"><span class="hero-word" style="display:inline-block;">' + w + '</span></span>';
-    }).join(' ');
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        var raw = heroHeadline.textContent.trim();
+        var words = raw.split(' ');
+        heroHeadline.innerHTML = words.map(function (w) {
+          return '<span style="display:inline-block;overflow:hidden;vertical-align:bottom;"><span class="hero-word" style="display:inline-block;">' + w + '</span></span>';
+        }).join(' ');
 
-    var wordEls = heroHeadline.querySelectorAll('.hero-word');
-    gsap.set(wordEls, { y: '110%' });
-    gsap.to(wordEls, {
-      y: '0%',
-      duration: 0.75,
-      ease: 'power3.out',
-      stagger: 0.09,
-      delay: 0.25
+        var wordEls = heroHeadline.querySelectorAll('.hero-word');
+        gsap.set(wordEls, { y: '110%' });
+        gsap.to(wordEls, {
+          y: '0%',
+          duration: 0.75,
+          ease: 'power3.out',
+          stagger: 0.09,
+          delay: 0.1
+        });
+
+        var lastWordDelay = 0.1 + (words.length - 1) * 0.09 + 0.1;
+        var heroSubtext = document.querySelector('.hero-subtext');
+        var heroCta = document.querySelector('.hero-cta');
+        if (heroSubtext) {
+          gsap.set(heroSubtext, { opacity: 0, y: 18 });
+          gsap.to(heroSubtext, { opacity: 1, y: 0, duration: 0.65, ease: 'power2.out', delay: lastWordDelay });
+        }
+        if (heroCta) {
+          gsap.set(heroCta, { opacity: 0, y: 18 });
+          gsap.to(heroCta, { opacity: 1, y: 0, duration: 0.65, ease: 'power2.out', delay: lastWordDelay + 0.15 });
+        }
+      });
     });
-
-    // Hero subtext and CTA cascade after headline
-    var lastWordDelay = 0.25 + (words.length - 1) * 0.09 + 0.1;
-    var heroSubtext = document.querySelector('.hero-subtext');
-    var heroCta = document.querySelector('.hero-cta');
-    if (heroSubtext) {
-      gsap.set(heroSubtext, { opacity: 0, y: 18 });
-      gsap.to(heroSubtext, { opacity: 1, y: 0, duration: 0.65, ease: 'power2.out', delay: lastWordDelay });
-    }
-    if (heroCta) {
-      gsap.set(heroCta, { opacity: 0, y: 18 });
-      gsap.to(heroCta, { opacity: 1, y: 0, duration: 0.65, ease: 'power2.out', delay: lastWordDelay + 0.15 });
-    }
   }
 
   // ── STAT CELLS REVEAL THEN COUNT ───────────────────────────────────
