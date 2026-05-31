@@ -57,6 +57,96 @@
 
   <!-- Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "REPLACE_WITH_TOKEN"}'></script>
+
+  <style>
+    .hero-eyebrow {
+      font-family: Inter, system-ui, sans-serif;
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: hsla(48,62%,97%,.45);
+      margin-bottom: 1.5rem;
+    }
+
+    .richard-card {
+      display: flex;
+      align-items: stretch;
+      background: #fcfaf2;
+      border: .5px solid #fcfaf2;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 0 1.5rem 1.5rem;
+      min-height: 300px;
+    }
+    .richard-card-text {
+      flex: 1;
+      padding: 3rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #0a0a0a;
+    }
+    .richard-card-text .moat-tag {
+      display: none;
+    }
+    .richard-card-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #0a0a0a;
+      text-transform: uppercase;
+    }
+    .richard-card-title {
+      font-family: Inter, system-ui, sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: hsla(0,0%,4%,.45);
+      margin-top: .25rem;
+    }
+    .richard-card-bio {
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: hsla(0,0%,4%,.65);
+      max-width: 680px;
+      flex: 1;
+      padding: 1.25rem 0;
+    }
+    .richard-card-cta {
+      display: inline-block;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: .625rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #fcfaf2;
+      background: #0a0a0a;
+      padding: .5rem 1.25rem;
+      border-radius: 100px;
+      text-decoration: none;
+      align-self: flex-start;
+      margin-top: .25rem;
+      transition: background-color .2s ease;
+    }
+    .richard-card-cta:hover { background: #333; }
+    .richard-card-photo {
+      width: 280px;
+      flex-shrink: 0;
+      padding: 0 2rem 0 0;
+    }
+    .richard-card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+      display: block;
+    }
+  </style>
 </head>
 <body class="bg-canvas text-ink font-sans">
 
@@ -68,8 +158,9 @@
   <!-- NAV -->
   <nav class="mono-line-b sticky top-0 z-50 bg-canvas">
     <div class="max-w-editorial mx-auto px-6 flex items-center justify-between h-14">
-      <a href="/" class="font-serif text-sm font-bold tracking-mono uppercase">Pragmatic Planning</a>
+      <a href="index.html" class="font-serif text-sm font-bold tracking-mono uppercase">Pragmatic Planning</a>
       <div class="flex items-center gap-8 text-xs tracking-mono uppercase">
+        <a href="about.html">About</a>
         <a href="#services">Services</a>
         <a href="#why-us">Why Us</a>
         <a href="#contact" class="border border-ink px-4 py-2 rounded-full hover:bg-ink hover:text-canvas transition-colors duration-200">Get Started</a>
@@ -92,11 +183,12 @@
       loop
       playsinline
       aria-hidden="true">
-      <source src="assets/img/hero-bw.mp4" type="video/mp4">
+      <source src="assets/img/pragmaticplanning-hero-bw.mp4" type="video/mp4">
     </video>
 
     <!-- Hero content -->
     <div class="hero-content">
+      <p class="hero-eyebrow">Queenstown / Wanaka Planning Consultant &nbsp;&middot;&nbsp; Resource Consents &amp; Short-Term Accommodation Approvals</p>
       <h1 class="hero-headline">We Get It Granted.</h1>
       <p class="hero-subtext">
         Resource consents approved in 8-12 weeks. Not 12 months.
@@ -317,8 +409,27 @@
         </div>
         <div class="about-body">
           <p><em>"Dealing with things sensibly and realistically in a way that is based on practical rather than theoretical considerations."</em></p>
-          <p>This is the philosophy that has guided Pragmatic Planning founder Richard Kemp through his years of professional practice. We often find that our clients are looking for exactly the same — no-nonsense solutions to achieve their building and development dreams without the usual pain.</p>
+          <p>This is the philosophy that has guided Pragmatic Planning founder Richard Kemp through his years of professional practice. We often find that our clients are looking for exactly the same   no-nonsense solutions to achieve their building and development dreams without the usual pain.</p>
           <p>We service Queenstown, Wanaka, Hawea, Glenorchy, Kingston, and everywhere in between. We're experts in getting your resource consent approved without the fuss.</p>
+        </div>
+      </div>
+
+      <!-- RICHARD CARD -->
+      <div class="richard-card">
+        <div class="richard-card-text">
+          <span class="moat-tag">[Founder]</span>
+          <h2 class="richard-card-name">Richard Kemp</h2>
+          <p class="richard-card-title">Town Planning Consultant</p>
+          <p class="richard-card-bio">15 years inside the system, first as a council planner, then as the person who beats it. Richard built Pragmatic Planning on one idea: that resource consents should move as fast as the people applying for them.</p>
+          <a href="#contact" class="richard-card-cta">Work with Richard</a>
+        </div>
+        <div class="richard-card-photo">
+          <img
+            src="assets/img/pragmaticplanning-richard-kemp-profile.webp"
+            alt="Richard Kemp, Town Planning Consultant and founder of Pragmatic Planning"
+            width="896"
+            height="1197"
+          >
         </div>
       </div>
 
@@ -334,7 +445,7 @@
         <div class="value-cell">
           <span class="value-tag">[02]</span>
           <p class="value-title">Honesty</p>
-          <p class="value-body">We don't sugar-coat the truth. We offer a flexible and pragmatic approach to resolve issues — telling you what you need to hear, not just what sounds good.</p>
+          <p class="value-body">We don't sugar-coat the truth. We offer a flexible and pragmatic approach to resolve issues   telling you what you need to hear, not just what sounds good.</p>
         </div>
 
         <div class="value-cell">
@@ -346,7 +457,7 @@
         <div class="value-cell">
           <span class="value-tag">[04]</span>
           <p class="value-title">One-Stop Solutions</p>
-          <p class="value-body">We effectively liaise with architects, engineers, project managers, surveyors, and most importantly the Council — so you don't have to manage every conversation yourself.</p>
+          <p class="value-body">We effectively liaise with architects, engineers, project managers, surveyors, and most importantly the Council   so you don't have to manage every conversation yourself.</p>
         </div>
 
       </div>
@@ -355,7 +466,7 @@
       <div class="testimonials-grid">
 
         <div class="testimonial-card">
-          <p class="testimonial-quote">Richard arranged our application for resource consent for short term holiday accommodation for us. He was fantastic — very thorough, thoughtful, professional and efficient. He made the whole process very easy considering we live overseas. I would highly recommend him to anyone considering seeking assistance with this sort of process.</p>
+          <p class="testimonial-quote">Richard arranged our application for resource consent for short term holiday accommodation for us. He was fantastic   very thorough, thoughtful, professional and efficient. He made the whole process very easy considering we live overseas. I would highly recommend him to anyone considering seeking assistance with this sort of process.</p>
           <div class="testimonial-author">
             <p class="testimonial-name">Georgia Stefanko</p>
             <p class="testimonial-role">Queenstown Holiday Home Owner</p>
@@ -363,7 +474,7 @@
         </div>
 
         <div class="testimonial-card">
-          <p class="testimonial-quote">If anyone is considering applying for resource consent, and think you will try to do it on your own — don't bother! We have heard nothing but horror stories about how long the consent process takes from people who thought they would save a dollar and do it themselves. Trust me, it's way easier and cheaper to let them sort it out for you.</p>
+          <p class="testimonial-quote">If anyone is considering applying for resource consent, and think you will try to do it on your own   don't bother! We have heard nothing but horror stories about how long the consent process takes from people who thought they would save a dollar and do it themselves. Trust me, it's way easier and cheaper to let them sort it out for you.</p>
           <div class="testimonial-author">
             <p class="testimonial-name">Dwayne Terry</p>
             <p class="testimonial-role">Queenstown / Glenorchy New Home Owner</p>
@@ -371,10 +482,10 @@
         </div>
 
         <div class="testimonial-card">
-          <p class="testimonial-quote">Richard is fantastic. This is the second time we have used him for our resource consent application. The application was so well put together that council processed it in record time. This is money really well spent — it saves you time and money with council and makes for a stress-free process. Highly recommended.</p>
+          <p class="testimonial-quote">Richard is fantastic. This is the second time we have used him for our resource consent application. The application was so well put together that council processed it in record time. This is money really well spent   it saves you time and money with council and makes for a stress-free process. Highly recommended.</p>
           <div class="testimonial-author">
             <p class="testimonial-name">Charlotte and Minhal Markham</p>
-            <p class="testimonial-role">Wanaka Family — Approved for New Build and Short-Term Accommodation</p>
+            <p class="testimonial-role">Wanaka Family   Approved for New Build and Short-Term Accommodation</p>
           </div>
         </div>
 
@@ -395,21 +506,21 @@
 
         <a href="#" class="blog-card" data-cursor-label="READ">
           <span class="blog-tag">[Short-Term Accommodation]</span>
-          <p class="blog-title">Council's New Short-Term Visitor Accommodation Rules — 2025 Update</p>
+          <p class="blog-title">Council's New Short-Term Visitor Accommodation Rules   2025 Update</p>
           <p class="blog-excerpt">On 30 January 2023 the Environment Court directed QLDC to change District Plan rules around short-term accommodation. Here's what it means for you in 2026.</p>
           <span class="blog-meta">Jan 2026</span>
         </a>
 
         <a href="#" class="blog-card" data-cursor-label="READ">
           <span class="blog-tag">[Subdivision]</span>
-          <p class="blog-title">Queenstown / Wanaka Subdivision Success — A How-To Guide</p>
+          <p class="blog-title">Queenstown / Wanaka Subdivision Success   A How-To Guide</p>
           <p class="blog-excerpt">The new Queenstown Lakes District Plan allows a higher level of subdivision in many areas, especially residential zones. Here's how to make the most of it.</p>
           <span class="blog-meta">2025</span>
         </a>
 
         <a href="#" class="blog-card" data-cursor-label="READ">
           <span class="blog-tag">[Building]</span>
-          <p class="blog-title">Section 37 of the Building Act — Have You Been Red Carded by QLDC?</p>
+          <p class="blog-title">Section 37 of the Building Act   Have You Been Red Carded by QLDC?</p>
           <p class="blog-excerpt">What does "Restrictions on commencing building work under the Resource Management Act 1991" actually mean for your project? We break it down plainly.</p>
           <span class="blog-meta">2024</span>
         </a>
@@ -417,7 +528,7 @@
         <a href="#" class="blog-card" data-cursor-label="READ">
           <span class="blog-tag">[District Plan]</span>
           <p class="blog-title">5 Costly Mistakes Property Buyers Make (and How to Avoid Them)</p>
-          <p class="blog-excerpt">Land in our district moves fast. We regularly advise soon-to-be property owners on the top 5 most expensive mistakes we see — and how to sidestep them.</p>
+          <p class="blog-excerpt">Land in our district moves fast. We regularly advise soon-to-be property owners on the top 5 most expensive mistakes we see   and how to sidestep them.</p>
           <span class="blog-meta">2024</span>
         </a>
 
