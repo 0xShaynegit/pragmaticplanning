@@ -25,9 +25,19 @@
   const labelXSet = gsap.quickSetter(label, 'x', 'px');
   const labelYSet = gsap.quickSetter(label, 'y', 'px');
 
+  // Dark sections where cursor should flip to Canvas colour
+  const darkSections = new Set(['hero', 'why-us']);
+
   window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
+
+    // Section-aware colour swap
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    const section = el && el.closest('section');
+    const onDark = section && darkSections.has(section.id);
+    cursor.classList.toggle('on-dark', onDark);
+    ring.classList.toggle('on-dark', onDark);
   });
 
   gsap.ticker.add(() => {
