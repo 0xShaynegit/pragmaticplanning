@@ -35,7 +35,7 @@
     // Section-aware colour swap
     const el = document.elementFromPoint(e.clientX, e.clientY);
     const section = el && el.closest('section');
-    const onDark = section && darkSections.has(section.id);
+    const onDark = section && darkSections.has(section.id) && !el.closest('.richard-card');
     cursor.classList.toggle('on-dark', onDark);
     ring.classList.toggle('on-dark', onDark);
   });
@@ -63,13 +63,11 @@
     el.addEventListener('mouseenter', () => {
       const text = el.dataset.cursorLabel;
       label.textContent = text;
-      gsap.to(cursor, { scale: 4, duration: 0.35, ease: 'power2.out' });
       gsap.to(ring, { scale: 1.5, opacity: 0.4, duration: 0.35, ease: 'power2.out' });
       gsap.to(label, { opacity: 1, duration: 0.2, ease: 'power2.out' });
     });
 
     el.addEventListener('mouseleave', () => {
-      gsap.to(cursor, { scale: 1, duration: 0.35, ease: 'power2.inOut' });
       gsap.to(ring, { scale: 1, opacity: 1, duration: 0.35, ease: 'power2.inOut' });
       gsap.to(label, { opacity: 0, duration: 0.15 });
     });
