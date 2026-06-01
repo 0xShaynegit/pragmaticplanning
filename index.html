@@ -205,6 +205,12 @@
       }
     }
 
+    /* ── Values grid + blog grid: single column on mobile ── */
+    @media (max-width: 767px) {
+      .values-grid { grid-template-columns: 1fr !important; }
+      .blog-grid { grid-template-columns: 1fr !important; }
+    }
+
     /* ── STEP 4: Richard card mobile stack ── */
     @media (max-width: 767px) {
       .richard-card {
