@@ -124,6 +124,11 @@
       .pp-footer-row .flex.gap-6 { flex-direction: column; align-items: center; gap: 0; }
       .pp-footer-row a { min-height: 44px; display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; }
     }
+    /* ── Blog grid: single column on mobile ── */
+    @media (max-width: 767px) {
+      .blog-grid { grid-template-columns: 1fr !important; }
+    }
+
     /* ── STEP 4: Mobile card overflow safety ── */
     @media (max-width: 767px) {
       .richard-card { flex-direction: column; margin: 0 1rem 1.5rem; }
