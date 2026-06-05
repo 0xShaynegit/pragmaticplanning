@@ -87,12 +87,21 @@
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "REPLACE_WITH_TOKEN"}'></script>
 
   <style>
-    /* -- Sticky nav -- */
+    /* ── STEP 0: Fixed nav ── */
     nav {
-      position: sticky !important;
+      position: fixed !important;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 50;
+      width: 100%;
     }
+
+    /* ── STEP 1: Push content below fixed nav ── */
+    main {
+      margin-top: 3.5rem;
+    }
+
 
     /* ── STEP 2: Global overflow fix ── */
     html, body {
@@ -608,4 +617,5 @@
 
 </body>
 </html>
+
 
