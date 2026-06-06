@@ -302,6 +302,41 @@
       margin-bottom: 1.5rem;
     }
 
+    .review-stars {
+      font-size: 1rem;
+      letter-spacing: .1em;
+      color: #f5a623;
+      margin-bottom: .25rem;
+    }
+
+    .review-loading {
+      color: rgba(252,250,242,0.4);
+      font-family: Inter, system-ui, sans-serif;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 0 2.5rem 2rem;
+    }
+
+    .review-all-btn {
+      display: inline-block;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #FCFAF2;
+      border: .5px solid rgba(252,250,242,0.3);
+      padding: .75rem 2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .review-all-btn:hover {
+      background: #FCFAF2;
+      color: #0A0A0A;
+    }
+
     .project-outcome {
       display: inline-block;
       font-family: Inter, system-ui, sans-serif;
@@ -716,6 +751,33 @@
     </div>
   </section>
 
+  <!-- GOOGLE REVIEWS -->
+  <section id="reviews" class="mono-line-b bg-ink text-canvas">
+    <div class="max-w-editorial mx-auto">
+
+      <div class="services-header">
+        <div class="services-header-top">
+          <span class="section-tag" style="border-color:rgba(252,250,242,0.3);color:#FCFAF2;">[Google Reviews]</span>
+          <h2 class="section-heading" style="color:#FCFAF2;">Client Verdicts</h2>
+        </div>
+      </div>
+
+      <div id="review-feed" class="testimonials-grid">
+        <p class="review-loading">Loading reviews...</p>
+      </div>
+
+      <div style="text-align:center;padding:1rem 1.5rem 3rem;">
+        <a
+          href="https://search.google.com/local/reviews?placeid=ChIJa8tLe4Md1akRE1bdhNsvO_g"
+          target="_blank"
+          rel="noopener"
+          class="review-all-btn"
+        >Read All Reviews on Google</a>
+      </div>
+
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact" class="mono-line-b">
     <div class="max-w-editorial mx-auto">
@@ -817,6 +879,8 @@
   <script src="assets/js/cursor.js"></script>
   <!-- Animations -->
   <script src="assets/js/animate.js"></script>
+  <!-- Google Reviews -->
+  <script src="assets/js/reviews.js"></script>
 
   </main>
 
@@ -827,7 +891,7 @@
 
         <div>
           <p class="text-xs tracking-mono uppercase font-bold">Pragmatic Planning</p>
-          <p class="text-xs tracking-mono uppercase opacity-50 mt-1">&copy; 2026 Queenstown / Wanaka / Hawea / Glenorchy</p>
+          <p class="text-xs tracking-mono uppercase opacity-50 mt-1" id="footer-standing">&copy; 2026 Queenstown / Wanaka / Hawea / Glenorchy</p>
         </div>
 
         <p class="text-xs tracking-mono uppercase pp-footer-mid" style="line-height:1.25rem;">A Town Planning Consultancy<br>for the Outcomes Obsessed.</p>
