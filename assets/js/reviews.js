@@ -3,7 +3,7 @@ async function fetchGoogleReviews() {
   if (!container) return;
 
   try {
-    const response = await fetch('https://pragmaticplanning.slrclaude.workers.dev');
+    const response = await fetch('/api/reviews');
     const data = await response.json();
     const reviews = data.reviews || [];
 
