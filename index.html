@@ -90,9 +90,31 @@
       width: 100%;
     }
 
-    /* ── STEP 1: Push content below fixed nav ── */
+    /* ── Contact bar above nav ── */
+    .nav-contact-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: .75rem;
+      padding: .3rem 1.5rem;
+      background: #0A0A0A;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .nav-contact-item {
+      color: rgba(252,250,242,.6);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .nav-contact-item:hover { color: #FCFAF2; }
+    .nav-contact-sep { color: rgba(252,250,242,.25); }
+
+    /* ── STEP 1: Push content below fixed nav (nav + contact bar) ── */
     main {
-      margin-top: 3.5rem;
+      margin-top: 5.25rem;
     }
 
     /* ── STEP 2: Global overflow fix ── */
@@ -280,6 +302,28 @@
       margin-bottom: 1.5rem;
     }
 
+    .project-outcome {
+      display: inline-block;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: .625rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(10,10,10,0.45);
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    .hero-credentials {
+      font-family: Inter, system-ui, sans-serif;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: hsla(48,62%,97%,.6);
+      margin-bottom: 2.5rem;
+    }
+
     .richard-card {
       display: flex;
       align-items: stretch;
@@ -369,6 +413,12 @@
 
   <!-- NAV -->
   <nav class="mono-line-b sticky top-0 z-50 bg-canvas">
+    <!-- Contact bar -->
+    <div class="nav-contact-bar">
+      <a href="tel:+64211043405" class="nav-contact-item">021 104 3405</a>
+      <span class="nav-contact-sep" aria-hidden="true">|</span>
+      <a href="mailto:info@pragmaticplanning.co.nz" class="nav-contact-item">info@pragmaticplanning.co.nz</a>
+    </div>
     <div class="max-w-editorial mx-auto px-6 flex items-center justify-between h-14">
       <a href="index.html" class="font-serif text-sm font-bold tracking-mono uppercase">Pragmatic Planning</a>
 
@@ -376,9 +426,9 @@
       <div class="desktop-nav flex items-center gap-8 text-xs tracking-mono uppercase">
         <a href="about.html">About</a>
         <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
-        <a href="blog.html">Blog</a>
-        <a href="#contact" class="border border-ink px-4 py-2 rounded-full hover:bg-ink hover:text-canvas transition-colors duration-200">Get Started</a>
+        <a href="#services">Airbnb &amp; Short-Term Rentals</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="border border-ink px-4 py-2 rounded-full hover:bg-ink hover:text-canvas transition-colors duration-200">Discuss Your Project</a>
       </div>
 
       <!-- Hamburger: visible on mobile only -->
@@ -404,9 +454,9 @@
       <nav class="mobile-nav-links" aria-label="Mobile navigation">
         <a href="about.html">About</a>
         <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
-        <a href="blog.html">Blog</a>
-        <a href="#contact">Get Started</a>
+        <a href="#services">Airbnb &amp; Short-Term Rentals</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Discuss Your Project</a>
       </nav>
     </div>
   </div>
@@ -433,14 +483,13 @@
 
     <!-- Hero content -->
     <div class="hero-content">
-      <p class="hero-eyebrow">Queenstown / Wanaka Planning Consultant &nbsp;&middot;&nbsp; Resource Consents &amp; Short-Term Accommodation Approvals</p>
+      <p class="hero-eyebrow">QUEENSTOWN LAKES PLANNING SPECIALISTS</p>
       <h1 class="hero-headline">We Get It Granted.</h1>
       <p class="hero-subtext">
-        Resource consents approved in 16-24 weeks. Not 24 months.
-        We navigate the 2026 Planning Bill transition so your project stays on schedule.
-        No stress. No jargon. Just outcomes.
+        From dream homes and Airbnb approvals to subdivisions and developments - we help turn property plans into approved outcomes.
       </p>
-      <a href="#contact" class="hero-cta">Start Your Project</a>
+      <p class="hero-credentials">500+ Planning Approvals Secured &nbsp;&middot;&nbsp; Queenstown Based &nbsp;&middot;&nbsp; Former QLDC Planner</p>
+      <a href="#contact" class="hero-cta">Discuss Your Project</a>
     </div>
 
     <!-- Scroll hint -->
@@ -450,185 +499,49 @@
 
   </section>
 
-  <!-- SUCCESS FEED: STATUS TAG GRID -->
-  <section id="success-feed" class="success-feed mono-line-b">
-    <div class="max-w-editorial mx-auto">
-
-      <!-- DATA STATS ROW -->
-      <div class="stats-row">
-        <div class="stat-cell">
-          <span class="stat-tag">[Data]</span>
-          <p class="stat-number">98%</p>
-          <p class="stat-label">Approval Rate</p>
-        </div>
-        <div class="stat-cell">
-          <span class="stat-tag">[Data]</span>
-          <p class="stat-number">14</p>
-          <p class="stat-label">2025 Projects</p>
-        </div>
-        <div class="stat-cell">
-          <span class="stat-tag">[Data]</span>
-          <p class="stat-number">250+</p>
-          <p class="stat-label">Projects Granted</p>
-        </div>
-      </div>
-
-      <!-- SERVICE OUTCOME CARDS -->
-      <div class="outcomes-grid">
-
-        <!-- Compliance Pack -->
-        <a href="#contact" class="outcome-card" data-cursor-label="VIEW COMPLIANCE PACK">
-          <span class="outcome-tag outcome-tag--product">[Product]</span>
-          <h2 class="outcome-title">The Compliance Pack</h2>
-          <p class="outcome-body">
-            Maximise your yield. Minimise your risk. A complete turn-key solution
-            for Queenstown and Wanaka short-term rental compliance. Includes the
-            April 2026 meth-testing protocols and full QLDC filing.
-          </p>
-          <span class="outcome-meta">[Status: Ready to Deploy]</span>
-        </a>
-
-        <!-- Subdivision Certainty -->
-        <a href="#contact" class="outcome-card" data-cursor-label="VIEW OUTCOME">
-          <span class="outcome-tag outcome-tag--outcome">[Outcome]</span>
-          <h2 class="outcome-title">Subdivision Certainty</h2>
-          <p class="outcome-body">
-            15 Subdivisions. 15 Approvals. Zero Rejections. Complexity is our
-            specialty. We manage the neighbours, the council, and the technical
-            hurdles so you can focus on the build.
-          </p>
-          <span class="outcome-meta">[Timeline: 10-16 Weeks]</span>
-        </a>
-
-        <!-- The Pragmatic Path -->
-        <a href="#contact" class="outcome-card" data-cursor-label="START PROJECT">
-          <span class="outcome-tag outcome-tag--process">[Process]</span>
-          <h2 class="outcome-title">The Pragmatic Path</h2>
-          <p class="outcome-body">
-            Your building project, unlocked. Most consents are approved in half
-            the industry average time. We don't sugar-coat the truth; we just
-            find the path to "Granted."
-          </p>
-          <span class="outcome-meta">[Most Consents: 16-24 Weeks]</span>
-        </a>
-
-      </div>
-
-      <!-- KNOWLEDGE MOAT BLOCK -->
-      <div class="moat-block mono-line" data-cursor-label="ABOUT RICHARD KEMP">
-        <div>
-          <span class="moat-tag">[The Moat]</span>
-          <p class="moat-headline">15 Years<br>Inside the<br>System.</p>
-        </div>
-        <div>
-          <p class="moat-body">
-            We know the rules because we've helped write them. From local government
-            experience to private practice, our relationships with QLDC are your
-            competitive advantage. We speak the language of the 2026 Natural
-            Environment Bill fluently.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FEASIBILITY ENGINE -->
-  <section id="feasibility" class="feasibility-section mono-line-b">
-    <div class="max-w-editorial mx-auto">
-
-      <!-- Header -->
-      <div class="feasibility-header">
-        <span class="feasibility-header-tag">[Engine]</span>
-        <h2 class="feasibility-header-title">Feasibility Engine</h2>
-        <span class="feasibility-header-sub">Enter a property address to get your complexity score.</span>
-      </div>
-
-      <!-- Address input row -->
-      <div class="feasibility-input-row" id="feasibility-input-row">
-        <div class="feasibility-address-wrap">
-          <input
-            type="text"
-            id="feasibility-address"
-            placeholder="Start typing a Queenstown or Wanaka address..."
-            autocomplete="off"
-            aria-label="Property address for feasibility assessment"
-          >
-        </div>
-        <button class="feasibility-submit" id="feasibility-submit" aria-label="Assess this property">
-          Assess Property
-        </button>
-      </div>
-
-      <!-- Error state -->
-      <div class="feasibility-error" id="feasibility-error" role="alert" aria-live="polite"></div>
-
-      <!-- Result panel (shown after scoring) -->
-      <div class="feasibility-result" id="feasibility-result" aria-live="polite">
-
-        <!-- Score panel -->
-        <div class="score-panel">
-          <span class="score-label-tag">[Complexity Score]</span>
-          <p class="score-number" id="score-number">--</p>
-          <p class="score-band" id="score-band"></p>
-          <div class="score-meter" role="meter" aria-label="Complexity score meter">
-            <div class="score-meter-fill" id="score-meter-fill"></div>
-          </div>
-        </div>
-
-        <!-- Recommendation panel -->
-        <div class="recommendation-panel">
-          <p class="rec-address" id="rec-address"></p>
-          <h3 class="rec-headline" id="rec-headline"></h3>
-          <p class="rec-body" id="rec-body"></p>
-          <a href="#contact" class="rec-cta" id="rec-cta"></a>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
   <!-- SERVICES -->
   <section id="services" class="mono-line-b">
     <div class="max-w-editorial mx-auto">
 
       <div class="services-header">
-        <span class="section-tag">[Services]</span>
-        <h2 class="section-heading">How We Can Help</h2>
+        <div class="services-header-top">
+          <span class="section-tag">[Services]</span>
+          <h2 class="section-heading">How We Can Help</h2>
+        </div>
+        <p class="services-intro">We provide practical planning advice and resource consent services for property owners, developers and businesses across Queenstown Lakes.</p>
       </div>
 
       <div class="services-grid">
 
         <a href="#contact" class="service-card" data-cursor-label="LEARN MORE">
           <span class="service-number">01</span>
-          <h3 class="service-title">Airbnb and Short-Term Accommodation</h3>
+          <h3 class="service-title">Resource Consents</h3>
           <p class="service-body">
-            We specialise in helping you obtain resource consent to use your property for high-value Airbnb and short-term visitor accommodation. Queenstown Lakes District Council rules around short-term accommodation are complex and have changed significantly in recent years. We know them inside out.
+            Whether you're building a home, undertaking alterations, or pursuing a larger development, we manage the resource consent process from start to finish. We provide practical advice, prepare robust applications, and work closely with Council to help achieve successful outcomes.
           </p>
         </a>
 
         <a href="#contact" class="service-card" data-cursor-label="LEARN MORE">
           <span class="service-number">02</span>
-          <h3 class="service-title">Planning and Resource Consent Applications</h3>
+          <h3 class="service-title">Airbnb &amp; Short-Term Accommodation</h3>
           <p class="service-body">
-            We have extensive experience in getting the resource consent you need approved by the Council. Whatever it may be, we can handle the entire process from start to completion. We simplify what is otherwise a complex, costly, and all-round-crazy process into your shiny new resource consent approval with the word "GRANTED" on the front page.
+            Queenstown Lakes' short-term accommodation rules can be complex. We specialise in helping property owners obtain resource consent for visitor accommodation, providing clear advice and managing the process from initial assessment through to approval.
           </p>
         </a>
 
         <a href="#contact" class="service-card" data-cursor-label="LEARN MORE">
           <span class="service-number">03</span>
-          <h3 class="service-title">Resource Consents for Building Projects</h3>
+          <h3 class="service-title">Subdivisions</h3>
           <p class="service-body">
-            We can help you plan your building project and apply for the necessary resource consents on your behalf. From a single dwelling to a commercial development, we manage the process so your build stays on schedule. Most consents are approved in half the industry average time.
+            From simple two-lot subdivisions to larger development projects, we provide strategic planning advice and coordinate the resource consent process through to approval. We work closely with surveyors, engineers and Council to help achieve successful outcomes.
           </p>
         </a>
 
         <a href="#contact" class="service-card" data-cursor-label="LEARN MORE">
           <span class="service-number">04</span>
-          <h3 class="service-title">Subdivision Resource Consents</h3>
+          <h3 class="service-title">Planning Advice</h3>
           <p class="service-body">
-            Subdivision always requires a resource consent. We work with surveyors, engineers, and the Council to create great subdivision outcomes and get your consent approved. Whether 2 lots or 200, we can help. 15 subdivisions. 15 approvals. Zero rejections.
+            Good planning advice can save significant time, cost and risk. Whether you're assessing a property's development potential, undertaking due diligence, or exploring project options, we provide clear, practical advice to help you make informed decisions.
           </p>
         </a>
 
@@ -636,11 +549,138 @@
     </div>
   </section>
 
-  <!-- WHY US / ABOUT -->
+  <!-- WHY PRAGMATIC PLANNING -->
   <section id="why-us" class="mono-line-b bg-ink text-canvas">
     <div class="max-w-editorial mx-auto">
 
-      <!-- About intro -->
+      <div class="services-header" style="--section-tag-color:#FCFAF2; --section-heading-color:#FCFAF2;">
+        <div class="services-header-top">
+          <span class="section-tag" style="border-color:rgba(252,250,242,0.3);color:#FCFAF2;">[Why Us]</span>
+          <h2 class="section-heading" style="color:#FCFAF2;">Why Pragmatic Planning</h2>
+        </div>
+      </div>
+
+      <div class="values-grid">
+
+        <div class="value-cell">
+          <span class="value-tag">[01]</span>
+          <p class="value-title">Commitment</p>
+          <p class="value-body">We are committed to the success of our clients. Our experience and professional networks mean that you will be in good hands from first contact to final approval.</p>
+        </div>
+
+        <div class="value-cell">
+          <span class="value-tag">[02]</span>
+          <p class="value-title">Honesty</p>
+          <p class="value-body">We don't sugar-coat the truth. We offer a flexible and pragmatic approach to resolve issues - telling you what you need to hear, not just what sounds good.</p>
+        </div>
+
+        <div class="value-cell">
+          <span class="value-tag">[03]</span>
+          <p class="value-title">Experienced</p>
+          <p class="value-body">We have experience working for the Council, for developers, businesses, and regular Mum and Dads building their dream home. We've seen every scenario.</p>
+        </div>
+
+        <div class="value-cell">
+          <span class="value-tag">[04]</span>
+          <p class="value-title">One-Stop Solutions</p>
+          <p class="value-body">We effectively liaise with architects, engineers, project managers, surveyors, and most importantly the Council - so you don't have to manage every conversation yourself.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT PROJECTS -->
+  <section id="projects" class="mono-line-b">
+    <div class="max-w-editorial mx-auto">
+
+      <div class="services-header">
+        <div class="services-header-top">
+          <span class="section-tag">[Projects]</span>
+          <h2 class="section-heading">Recent Projects</h2>
+        </div>
+        <p class="services-intro">A selection of recent resource consent approvals across Queenstown Lakes.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card project-card">
+          <span class="service-number">01</span>
+          <h3 class="service-title">Project Title</h3>
+          <p class="service-body">Project description and outcome placeholder. Replace with real project details.</p>
+          <span class="project-outcome">[Outcome: Granted]</span>
+        </div>
+
+        <div class="service-card project-card">
+          <span class="service-number">02</span>
+          <h3 class="service-title">Project Title</h3>
+          <p class="service-body">Project description and outcome placeholder. Replace with real project details.</p>
+          <span class="project-outcome">[Outcome: Granted]</span>
+        </div>
+
+        <div class="service-card project-card">
+          <span class="service-number">03</span>
+          <h3 class="service-title">Project Title</h3>
+          <p class="service-body">Project description and outcome placeholder. Replace with real project details.</p>
+          <span class="project-outcome">[Outcome: Granted]</span>
+        </div>
+
+        <div class="service-card project-card">
+          <span class="service-number">04</span>
+          <h3 class="service-title">Project Title</h3>
+          <p class="service-body">Project description and outcome placeholder. Replace with real project details.</p>
+          <span class="project-outcome">[Outcome: Granted]</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="mono-line-b">
+    <div class="max-w-editorial mx-auto">
+
+      <div class="services-header">
+        <div class="services-header-top">
+          <span class="section-tag">[Testimonials]</span>
+          <h2 class="section-heading">What Clients Say</h2>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Richard arranged our application for resource consent for short term holiday accommodation for us. He was fantastic - very thorough, thoughtful, professional and efficient. He made the whole process very easy considering we live overseas. I would highly recommend him to anyone considering seeking assistance with this sort of process.</p>
+          <div class="testimonial-author">
+            <p class="testimonial-name">Georgia Stefanko</p>
+            <p class="testimonial-role">Queenstown Holiday Home Owner</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">If anyone is considering applying for resource consent, and think you will try to do it on your own - don't bother! We have heard nothing but horror stories about how long the consent process takes from people who thought they would save a dollar and do it themselves. Trust me, it's way easier and cheaper to let them sort it out for you.</p>
+          <div class="testimonial-author">
+            <p class="testimonial-name">Dwayne Terry</p>
+            <p class="testimonial-role">Queenstown / Glenorchy New Home Owner</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Richard is fantastic. This is the second time we have used him for our resource consent application. The application was so well put together that council processed it in record time. This is money really well spent - it saves you time and money with council and makes for a stress-free process. Highly recommended.</p>
+          <div class="testimonial-author">
+            <p class="testimonial-name">Charlotte and Minhal Markham</p>
+            <p class="testimonial-role">Wanaka Family - Approved for New Build and Short-Term Accommodation</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="mono-line-b bg-ink text-canvas">
+    <div class="max-w-editorial mx-auto">
+
       <div class="about-intro">
         <div>
           <span class="moat-tag">[About]</span>
@@ -650,12 +690,11 @@
         </div>
         <div class="about-body">
           <p><em>"Dealing with things sensibly and realistically in a way that is based on practical rather than theoretical considerations."</em></p>
-          <p>This is the philosophy that has guided Pragmatic Planning founder Richard Kemp through his years of professional practice. We often find that our clients are looking for exactly the same   no-nonsense solutions to achieve their building and development dreams without the usual pain.</p>
+          <p>This is the philosophy that has guided Pragmatic Planning founder Richard Kemp through his years of professional practice. We often find that our clients are looking for exactly the same - no-nonsense solutions to achieve their building and development dreams without the usual pain.</p>
           <p>We service Queenstown, Wanaka, Hawea, Glenorchy, Kingston, and everywhere in between. We're experts in getting your resource consent approved without the fuss.</p>
         </div>
       </div>
 
-      <!-- RICHARD CARD -->
       <div class="richard-card">
         <div class="richard-card-text">
           <span class="moat-tag">[Founder]</span>
@@ -672,111 +711,6 @@
             height="1197"
           >
         </div>
-      </div>
-
-      <!-- Values grid -->
-      <div class="values-grid">
-
-        <div class="value-cell">
-          <span class="value-tag">[01]</span>
-          <p class="value-title">Commitment</p>
-          <p class="value-body">We are committed to the success of our clients. Our experience and professional networks mean that you will be in good hands from first contact to final approval.</p>
-        </div>
-
-        <div class="value-cell">
-          <span class="value-tag">[02]</span>
-          <p class="value-title">Honesty</p>
-          <p class="value-body">We don't sugar-coat the truth. We offer a flexible and pragmatic approach to resolve issues   telling you what you need to hear, not just what sounds good.</p>
-        </div>
-
-        <div class="value-cell">
-          <span class="value-tag">[03]</span>
-          <p class="value-title">Experienced</p>
-          <p class="value-body">We have experience working for the Council, for developers, businesses, and regular Mum and Dads building their dream home. We've seen every scenario.</p>
-        </div>
-
-        <div class="value-cell">
-          <span class="value-tag">[04]</span>
-          <p class="value-title">One-Stop Solutions</p>
-          <p class="value-body">We effectively liaise with architects, engineers, project managers, surveyors, and most importantly the Council   so you don't have to manage every conversation yourself.</p>
-        </div>
-
-      </div>
-
-      <!-- Testimonials -->
-      <div class="testimonials-grid">
-
-        <div class="testimonial-card">
-          <p class="testimonial-quote">Richard arranged our application for resource consent for short term holiday accommodation for us. He was fantastic   very thorough, thoughtful, professional and efficient. He made the whole process very easy considering we live overseas. I would highly recommend him to anyone considering seeking assistance with this sort of process.</p>
-          <div class="testimonial-author">
-            <p class="testimonial-name">Georgia Stefanko</p>
-            <p class="testimonial-role">Queenstown Holiday Home Owner</p>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-quote">If anyone is considering applying for resource consent, and think you will try to do it on your own   don't bother! We have heard nothing but horror stories about how long the consent process takes from people who thought they would save a dollar and do it themselves. Trust me, it's way easier and cheaper to let them sort it out for you.</p>
-          <div class="testimonial-author">
-            <p class="testimonial-name">Dwayne Terry</p>
-            <p class="testimonial-role">Queenstown / Glenorchy New Home Owner</p>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-quote">Richard is fantastic. This is the second time we have used him for our resource consent application. The application was so well put together that council processed it in record time. This is money really well spent   it saves you time and money with council and makes for a stress-free process. Highly recommended.</p>
-          <div class="testimonial-author">
-            <p class="testimonial-name">Charlotte and Minhal Markham</p>
-            <p class="testimonial-role">Wanaka Family   Approved for New Build and Short-Term Accommodation</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG -->
-  <section id="blog" class="mono-line-b">
-    <div class="max-w-editorial mx-auto">
-
-      <div class="services-header">
-        <span class="section-tag">[What's New]</span>
-        <h2 class="section-heading">News and Advice</h2>
-      </div>
-
-      <div class="blog-grid">
-
-        <a href="pragmaticplanning-short-term-visitor-accommodation-rules-queenstown.html" class="blog-card" data-cursor-label="READ">
-          <span class="blog-tag">[Short-Term Accommodation]</span>
-          <p class="blog-title">Council's New Short-Term Visitor Accommodation Rules. 2025 Update</p>
-          <p class="blog-excerpt">On 30 January 2023 the Environment Court directed QLDC to change District Plan rules around short-term accommodation. Here's what it means for you in 2026.</p>
-          <span class="blog-meta">Jan 2026</span>
-        </a>
-
-        <a href="pragmaticplanning-subdivision-success-queenstown-wanaka-guide.html" class="blog-card" data-cursor-label="READ">
-          <span class="blog-tag">[Subdivision]</span>
-          <p class="blog-title">Queenstown / Wanaka Subdivision Success. A How-To Guide</p>
-          <p class="blog-excerpt">The new Queenstown Lakes District Plan allows a higher level of subdivision in many areas, especially residential zones. Here's how to make the most of it.</p>
-          <span class="blog-meta">Apr 2020</span>
-        </a>
-
-        <a href="pragmaticplanning-section-37-building-act-queenstown.html" class="blog-card" data-cursor-label="READ">
-          <span class="blog-tag">[Building]</span>
-          <p class="blog-title">Section 37 of the Building Act. Have You Been Red Carded by QLDC?</p>
-          <p class="blog-excerpt">What does "Restrictions on commencing building work under the Resource Management Act 1991" actually mean for your project? We break it down plainly.</p>
-          <span class="blog-meta">Jan 2020</span>
-        </a>
-
-        <a href="pragmaticplanning-5-costly-mistakes-property-buyers-queenstown.html" class="blog-card" data-cursor-label="READ">
-          <span class="blog-tag">[Property Buying]</span>
-          <p class="blog-title">5 Costly Mistakes Property Buyers Make (and How to Avoid Them)</p>
-          <p class="blog-excerpt">Land in our district moves fast. We regularly advise soon-to-be property owners on the top 5 most expensive mistakes we see and how to sidestep them.</p>
-          <span class="blog-meta">Oct 2015</span>
-        </a>
-
-      </div>
-
-      <div style="text-align:center;padding:1rem 1.5rem 3rem;">
-        <a href="blog.html" class="text-xs tracking-mono uppercase border border-ink px-6 py-3 rounded-full hover:bg-ink hover:text-canvas transition-colors duration-200">View All Posts</a>
       </div>
 
     </div>
@@ -881,8 +815,6 @@
   <script src="assets/js/gsap.min.js"></script>
   <!-- Cursor -->
   <script src="assets/js/cursor.js"></script>
-  <!-- Feasibility Engine -->
-  <script src="assets/js/feasibility.js"></script>
   <!-- Animations -->
   <script src="assets/js/animate.js"></script>
 
@@ -907,6 +839,7 @@
             <a href="https://www.linkedin.com/in/richardkempnz" target="_blank" rel="noopener" class="hover:opacity-100 transition-opacity">LinkedIn</a>
           </div>
           <div style="text-align:center;margin-top:.25rem;">
+            <a href="blog.html" class="hover:opacity-100 transition-opacity" style="padding:.5rem .75rem;display:inline-block;">News</a>
             <a href="privacy-policy.html" class="hover:opacity-100 transition-opacity" style="padding:.5rem .75rem;display:inline-block;">Privacy Policy</a>
             <a href="disclaimer.html" class="hover:opacity-100 transition-opacity" style="padding:.5rem .75rem;display:inline-block;">Disclaimer</a>
           </div>

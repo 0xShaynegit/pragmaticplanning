@@ -470,8 +470,23 @@
 .services-header {
   padding: 3rem 2.5rem 1.5rem;
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.services-header-top {
+  display: flex;
   align-items: baseline;
   gap: 2rem;
+}
+
+.services-intro {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  line-height: 1.6;
+  color: #0A0A0A;
+  max-width: 600px;
+  margin-bottom: 0.5rem;
 }
 
 .section-tag {
