@@ -21,7 +21,7 @@ async function fetchGoogleReviews() {
     container.innerHTML = reviews.map(function(review) {
       const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
       const text = review.text && review.text.text ? review.text.text : '';
-      const excerpt = text.length > 220 ? text.substring(0, 220).trim() + '...' : text;
+      const excerpt = text;
       const author = review.authorAttribution ? review.authorAttribution.displayName : 'Google Reviewer';
       const time = review.relativePublishTimeDescription || '';
 
