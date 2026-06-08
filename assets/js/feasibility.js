@@ -1,4 +1,4 @@
-// feasibility.js — Google Places Autocomplete + property complexity scoring
+// feasibility.js   Google Places Autocomplete + property complexity scoring
 // Requires Google Maps JS API with Places library loaded before this script.
 
 (function () {
@@ -30,7 +30,7 @@
     },
     medium: {
       headline: 'Professional Guidance Advised',
-      body: 'This property has characteristics that add complexity — zoning, proximity to sensitive areas, or rural character rules. We recommend a strategy session before lodging.',
+      body: 'This property has characteristics that add complexity   zoning, proximity to sensitive areas, or rural character rules. We recommend a strategy session before lodging.',
       ctaText: 'Book a Strategy Session',
       ctaClass: 'rec-cta rec-cta--standard',
     },
@@ -59,15 +59,20 @@
     const sublocality = getComponent('sublocality') || getComponent('sublocality_level_1');
     const route       = getComponent('route');
     const adminArea   = getComponent('administrative_area_level_2');
+    const fullAddress = (place.formatted_address || '').toLowerCase();
 
     // Must be within Queenstown Lakes District to score meaningfully
-    const inQLDC = adminArea.includes('queenstown') || locality.includes('queenstown') ||
-                   locality.includes('wanaka') || locality.includes('glenorchy') ||
-                   locality.includes('hawea') || locality.includes('arrowtown') ||
-                   locality.includes('kingston') || locality.includes('luggate');
+    const qldcTerms = ['queenstown', 'wanaka', 'wānaka', 'glenorchy', 'hawea', 'hāwea',
+                       'arrowtown', 'kingston', 'luggate', 'frankton', 'fernhill',
+                       "jack's point", 'jacks point', 'kelvin heights', 'lake hayes',
+                       'shotover', 'closeburn', 'albert town', 'hawea flat', 'makarora',
+                       'cardrona', 'cromwell', 'bannockburn', 'arthurs point', 'sunshine bay'];
+    const inQLDC = qldcTerms.some(t =>
+      adminArea.includes(t) || locality.includes(t) || sublocality.includes(t) || fullAddress.includes(t)
+    );
 
     if (!inQLDC) {
-      // Outside QLDC — return null to trigger out-of-area message
+      // Outside QLDC   return null to trigger out-of-area message
       return null;
     }
 
@@ -198,7 +203,7 @@
   }
 
   // ─── Init ─────────────────────────────────────────────────────────────────
-  // Wait for DOM, then init — Google script loads async so we use the
+  // Wait for DOM, then init   Google script loads async so we use the
   // standard callback pattern if API is already present, else degrade gracefully.
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAutocomplete);
