@@ -426,16 +426,18 @@
     }
     .richard-card-cta:hover { background: #333; }
     .richard-card-photo {
+      position: relative;
       width: 480px;
       flex-shrink: 0;
       padding: 0 2rem 0 0;
     }
     .richard-card-photo img {
-      width: 100%;
+      position: absolute;
+      top: 0; left: 0; right: 2rem; bottom: 0;
+      width: calc(100% - 2rem);
       height: 100%;
       object-fit: cover;
       object-position: right bottom;
-      display: block;
     }
     .services-grid { padding-bottom: 3rem; }
   </style>
