@@ -259,6 +259,8 @@
         padding: 0;
         margin-left: 60px;
       }
+      .richard-photo-desktop { display: none; }
+      .richard-photo-mobile { display: block; }
       .richard-card-photo img {
         position: static;
         width: auto;
@@ -428,19 +430,23 @@
       transition: background-color .2s ease;
     }
     .richard-card-cta:hover { background: #333; }
-    .richard-card-photo {
-      position: relative;
-      width: 380px;
-      flex-shrink: 0;
-      padding: 0 2rem 0 0;
-    }
-    .richard-card-photo img {
-      position: absolute;
-      top: 0; left: 0; right: 2rem; bottom: 0;
-      width: calc(100% - 2rem);
-      height: 100%;
-      object-fit: cover;
-      object-position: right bottom;
+    @media (min-width: 768px) {
+      .richard-photo-desktop { display: block; }
+      .richard-photo-mobile { display: none; }
+      .richard-card-photo {
+        position: relative;
+        width: 380px;
+        flex-shrink: 0;
+        padding: 0 2rem 0 0;
+      }
+      .richard-card-photo img {
+        position: absolute;
+        top: 0; left: 0; right: 2rem; bottom: 0;
+        width: calc(100% - 2rem);
+        height: 100%;
+        object-fit: cover;
+        object-position: right bottom;
+      }
     }
     .services-grid { padding-bottom: 3rem; }
   </style>
@@ -743,8 +749,14 @@
           <a href="about.html" class="richard-card-cta">Learn More</a>
         </div>
         <div class="richard-card-photo">
-          <img
+          <img class="richard-photo-desktop"
             src="assets/img/pragmaticplanning-richard-kemp-profile.webp"
+            alt="Richard Kemp, Town Planning Consultant and founder of Pragmatic Planning"
+            width="896"
+            height="1197"
+          >
+          <img class="richard-photo-mobile"
+            src="assets/img/pragmaticplanning-richard-kemp-profile-mobile.webp"
             alt="Richard Kemp, Town Planning Consultant and founder of Pragmatic Planning"
             width="896"
             height="1197"
