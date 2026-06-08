@@ -36,7 +36,7 @@ async function fetchGoogleReviews() {
     }).join('');
 
   } catch (error) {
-    container.innerHTML = '<p style="color:rgba(252,250,242,0.5);padding:0 2.5rem 2rem;font-size:.875rem;">Unable to load reviews. <a href="https://www.google.com/maps/place/Pragmatic+Planning/@-45.0684789,168.7525786,17z/data=!4m8!3m7!1s0xa9d51d837b4bcb6b:0xf83b2fdb84dd5613!8m2!3d-45.0684789!4d168.7525786!9m1!1b1" target="_blank" rel="noopener" style="color:#FCFAF2;">View on Google.</a></p>';
+    container.innerHTML = '<p style="color:rgba(252,250,242,0.5);padding:0 2.5rem 2rem;font-size:.875rem;">Unable to load reviews. <a href="https://www.google.com/maps/place/Pragmatic+Planning/@-45.0684789,168.7525786,17z/data=!3m1!4b1!4m6!3m5!1s0xa9d51d837b4bcb6b:0xf83b2fdb84dd5613!8m2!3d-45.0684789!4d168.7525786!16s%2Fg%2F11bytysvtr?hl=en-AU&entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" style="color:#FCFAF2;">View on Google.</a></p>';
   }
 }
 
