@@ -4,23 +4,22 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Handle the reviews API endpoint
     if (url.pathname === "/api/reviews") {
       const origin = request.headers.get("Origin") || "";
       const allowedOrigins = [
         "https://pragmaticplanning.co.nz",
         "https://pragmaticplanning.slrclaude.workers.dev"
       ];
-      const corsOrigin = allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
+      const allowedOrigin = allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
 
-      const corsHeaders = {
-        "Access-Control-Allow-Origin": corsOrigin,
+      const responseHeaders = {
+        "Access-Control-Allow-Origin": allowedOrigin,
         "Access-Control-Allow-Methods": "GET",
         "Content-Type": "application/json",
       };
 
       if (request.method === "OPTIONS") {
-        return new Response(null, { headers: corsHeaders });
+        return new Response(null, { headers: responseHeaders });
       }
 
       try {
@@ -29,16 +28,15 @@ export default {
           headers: { "X-Goog-FieldMask": "reviews,rating,userRatingCount" }
         });
         const data = await response.json();
-        return new Response(JSON.stringify(data), { headers: corsHeaders });
+        return new Response(JSON.stringify(data), { headers: responseHeaders });
       } catch (error) {
         return new Response(JSON.stringify({ error: "Failed to fetch reviews" }), {
           status: 500,
-          headers: corsHeaders,
+          headers: responseHeaders,
         });
       }
     }
 
-    // All other requests: serve static assets
     return env.ASSETS.fetch(request);
   }
 };

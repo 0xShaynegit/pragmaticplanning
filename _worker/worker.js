@@ -8,14 +8,14 @@ export default {
       "https://pragmaticplanning.co.nz",
       "https://pragmaticplanning.slrclaude.workers.dev"
     ];
-    const corsHeaders = {
+    const responseHeaders = {
       "Access-Control-Allow-Origin": allowedOrigins.includes(origin) ? origin : allowedOrigins[0],
       "Access-Control-Allow-Methods": "GET",
       "Content-Type": "application/json",
     };
 
     if (request.method === "OPTIONS") {
-      return new Response(null, { headers: corsHeaders });
+      return new Response(null, { headers: responseHeaders });
     }
 
     try {
@@ -27,12 +27,12 @@ export default {
 
       const data = await response.json();
 
-      return new Response(JSON.stringify(data), { headers: corsHeaders });
+      return new Response(JSON.stringify(data), { headers: responseHeaders });
 
     } catch (error) {
       return new Response(JSON.stringify({ error: "Failed to fetch reviews" }), {
         status: 500,
-        headers: corsHeaders,
+        headers: responseHeaders,
       });
     }
   }

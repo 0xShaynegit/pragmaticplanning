@@ -69,7 +69,7 @@ Page layout - section order:
 - **Custom domain**: Connect `pragmaticplanning.co.nz` to Cloudflare Workers deployment
 
 ## On Domain Go-Live
-1. Update Worker CORS in `_worker.js` (already includes `pragmaticplanning.co.nz`)
+1. `_worker.js` already includes `pragmaticplanning.co.nz` in allowed origins
 2. No changes needed to `reviews.js` - uses relative `/api/reviews` path
 3. Replace analytics token
 4. Test Core Web Vitals
