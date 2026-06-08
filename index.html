@@ -255,18 +255,20 @@
       }
       .richard-card-photo {
         width: 100%;
-        height: 320px;
+        height: 510px;
         padding: 0;
-        margin-left: 60px;
+        position: relative;
       }
       .richard-photo-desktop { display: none; }
       .richard-photo-mobile { display: block; }
       .richard-card-photo img {
-        position: static;
+        position: absolute;
+        bottom: 0;
+        right: -200px;
         width: auto;
-        height: 170px;
+        height: 510px;
         object-fit: contain;
-        object-position: right top;
+        object-position: bottom right;
       }
       .richard-card-text {
         padding: 2rem 1.5rem;
