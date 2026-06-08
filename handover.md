@@ -1,6 +1,6 @@
 # Pragmatic Planning - Handover
 
-**Date:** 09 June 2026
+**Date:** 09 June 2026 (updated)
 **Status:** Live on workers.dev - pending custom domain connection
 
 ---
@@ -31,6 +31,7 @@ Site is live at: `https://pragmaticplanning.slrclaude.workers.dev`
 - Single richard-card, no definition block
 - Copy: Founded by Richard Kemp, 500+ approvals, former QLDC planner, established 2015
 - CTA: "Learn More" links to about.html
+- Photo: absolutely positioned inside container, width 380px, height locked to text column height via `align-items: stretch`. DO NOT change width without understanding this   height stays fixed regardless of width changes.
 
 ### About Page
 - Stats updated: 500+ planning approvals (was 250+), 2015 founding confirmed
@@ -83,8 +84,8 @@ Site is live at: `https://pragmaticplanning.slrclaude.workers.dev`
 ---
 
 ## Git - Latest Commits
-- `67d38f4` - Add SEE PROJECT cursor label to project cards
-- `91c88c6` - Update About page stats: 500+ approvals, 2015 founding
-- `475237b` - Trim About section to single richard-card with new copy
+- `fba681f` - Widen photo column to 380px, height unchanged
+- `258ce34` - Photo absolutely positioned, height locked to text column
+- `8117c23` - Remove duplicate footer CSS across all pages
 - `4e0b1d1` - Add nav contact bar CSS to all non-index pages
 - `ac74a9b` - Update all pages to use header and footer from index.html
