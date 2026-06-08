@@ -144,7 +144,7 @@
   // ── SERVICE CARDS STAGGER ────────────────────────────────────────────
   onEnterAll('.services-grid', function (el) {
     gsap.from(el.querySelectorAll('.service-card'), {
-      opacity: 0, y: 16, duration: 0.5, ease: 'power2.out', stagger: 0.08
+      opacity: 0, y: 16, duration: 0.5, ease: 'power2.out'
     });
   }, 0.1);
 
