@@ -286,6 +286,26 @@
     .faq-a.is-open { display: block; }
     .faq-a p { margin-bottom: 0; }
     @media (max-width: 900px) { .article-body { grid-template-columns: 1fr; } .article-sidebar { position: static; } .feasibility-inline { flex-direction: column; } }
+    .nav-contact-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: .75rem;
+      padding: .3rem 1.5rem;
+      background: #0A0A0A;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .nav-contact-item {
+      color: rgba(252,250,242,.6);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .nav-contact-item:hover { color: #FCFAF2; }
+    .nav-contact-sep { color: rgba(252,250,242,.25); }
   </style>
 
   <!-- BreadcrumbList Schema -->
