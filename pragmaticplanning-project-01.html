@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Project 01 | Pragmatic Planning</title>
+  <meta name="description" content="Resource consent project by Pragmatic Planning. Queenstown Lakes District planning approval.">
+  <link rel="canonical" href="https://pragmaticplanning.co.nz/project-01/">
+
+  <meta property="og:title" content="Project 01 | Pragmatic Planning">
+  <meta property="og:description" content="Resource consent project by Pragmatic Planning. Queenstown Lakes District planning approval.">
+  <meta property="og:url" content="https://pragmaticplanning.co.nz/project-01/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_NZ">
+  <meta property="og:image" content="https://pragmaticplanning.co.nz/assets/img/pragmaticplanning-social-share.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pragmatic Planning - Resource Consent Specialists in Queenstown and Wanaka, New Zealand">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://pragmaticplanning.co.nz/assets/img/pragmaticplanning-social-share.webp">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Project 01",
+    "description": "Resource consent project by Pragmatic Planning. Queenstown Lakes District planning approval.",
+    "datePublished": "2026-06-08",
+    "dateModified": "2026-06-08",
+    "author": { "@type": "Person", "name": "Richard Kemp", "url": "https://pragmaticplanning.co.nz/about/" },
+    "publisher": { "@type": "Organization", "name": "Pragmatic Planning", "url": "https://pragmaticplanning.co.nz" }
+  }
+  </script>
+
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "REPLACE_WITH_TOKEN"}'></script>
+
+  <style>
+    /* ── STEP 0: Fixed nav ── */
+    nav {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      width: 100%;
+    }
+
+    /* ── STEP 1: Push content below fixed nav ── */
+    main {
+      margin-top: 3.5rem;
+    }
+
+
+    /* ── STEP 2: Global overflow fix ── */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    /* ── STEP 1: Hamburger + Mobile Nav ── */
+    .hamburger-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: #0a0a0a;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+    }
+    .mobile-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.55);
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    body.mobile-menu-open .mobile-menu-overlay {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mobile-menu-drawer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100%;
+      background: #fcfaf2;
+      padding: 1.5rem;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    body.mobile-menu-open .mobile-menu-drawer {
+      transform: translateX(0);
+    }
+    .mobile-menu-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: #0a0a0a;
+      align-self: flex-end;
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1.5rem;
+    }
+    .mobile-nav-links a {
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #0a0a0a;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      border-bottom: 0.5px solid rgba(10, 10, 10, 0.1);
+      padding: 0 0.25rem;
+    }
+    .mobile-nav-links a:last-child {
+      margin-top: 1.5rem;
+      border: 1px solid #0a0a0a;
+      border-radius: 9999px;
+      justify-content: center;
+    }
+    @media (max-width: 767px) {
+      .desktop-nav { display: none !important; }
+      .hamburger-btn { display: flex; }
+    }
+    /* ── STEP 3: Mobile footer ── */
+    @media (max-width: 767px) {
+      .pp-footer-row { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
+      .pp-footer-row > div:first-child { text-align: center; }
+      .pp-footer-mid { text-align: center; }
+      .pp-footer-row .flex.gap-6 { flex-direction: column; align-items: center; gap: 0; }
+      .pp-footer-row a { min-height: 44px; display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; }
+    }
+
+    /* ── Mobile: hide sidebar panels (keep TLDR) ── */
+    @media (max-width: 767px) {
+      .sidebar-card,
+      .sidebar-toc { display: none; }
+    }
+    /* ── STEP 4: Mobile card overflow safety ── */
+    @media (max-width: 767px) {
+      .richard-card { flex-direction: column; margin: 0 1rem 1.5rem; }
+      .richard-card-photo { width: 100%; height: 280px; padding: 0; }
+      .richard-card-text { padding: 2rem 1.5rem; }
+      .section-heading, .contact-headline { text-align: center; }
+      .services-header, .feasibility-header { flex-wrap: wrap; }
+      .feasibility-header-sub { margin-left: 0; width: 100%; }
+    }
+
+    .article-hero { padding: 4rem 2.5rem 2.5rem; max-width: 1440px; margin: 0 auto; display: flex; gap: 4rem; align-items: flex-start; }
+    .article-hero-left { flex: 1; min-width: 0; }
+    .article-hero .breadcrumb { font-family: Inter, system-ui, sans-serif; font-size: .625rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: hsla(0,0%,4%,.4); margin-bottom: 1.5rem; }
+    .article-hero .breadcrumb a { color: inherit; text-decoration: none; }
+    .article-hero .breadcrumb a:hover { color: #005f4b; }
+    .article-meta { font-family: Inter, system-ui, sans-serif; font-size: .625rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: hsla(0,0%,4%,.4); margin-bottom: 1.5rem; display: flex; gap: 2rem; }
+    .article-tag { display: inline-block; background: #005f4b; color: #fcfaf2; padding: .25rem .625rem; font-size: .625rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .article-headline { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900; line-height: 1.05; letter-spacing: -.02em; color: #0a0a0a; text-transform: uppercase; max-width: 900px; margin-bottom: 1.5rem; }
+    .article-standfirst { font-family: Inter, system-ui, sans-serif; font-size: 1rem; line-height: 1.7; color: hsla(0,0%,4%,.6); max-width: 720px; margin-bottom: 0; }
+    .hero-tldr { width: 320px; flex-shrink: 0; background: #fcfaf2; border: .5px solid hsla(0,0%,4%,.1); border-radius: 12px; padding: 1.75rem 2rem; align-self: center; }
+    .hero-tldr-tag { font-family: Inter, system-ui, sans-serif; font-size: .625rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: hsla(0,0%,4%,.4); display: block; margin-bottom: .875rem; }
+    .hero-tldr-list { list-style: none; margin: 0; padding: 0; }
+    .hero-tldr-list li { font-family: Inter, system-ui, sans-serif; font-size: .8rem; line-height: 1.6; color: hsla(0,0%,4%,.7); padding: .5rem 0; border-bottom: .5px solid hsla(0,0%,4%,.08); padding-left: 1rem; position: relative; }
+    .hero-tldr-list li:last-child { border-bottom: none; }
+    .hero-tldr-list li::before { content: ''; position: absolute; left: 0; top: .9rem; width: 4px; height: 4px; border-radius: 50%; background: #005f4b; }
+    .hero-tldr-list li strong { color: #0a0a0a; }
+    @media (max-width: 1024px) { .article-hero { flex-direction: column; gap: 2rem; } .hero-tldr { width: 100%; } }
+    .article-body { max-width: 1440px; margin: 0 auto; padding: 0 2.5rem 4rem; display: grid; grid-template-columns: 1fr 320px; gap: 4rem; align-items: start; }
+    .article-content { min-width: 0; }
+    .article-content h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; letter-spacing: -.02em; line-height: 1.1; color: #0a0a0a; text-transform: uppercase; margin: 3rem 0 1rem; padding-top: 2rem; border-top: .5px solid hsla(0,0%,4%,.12); }
+    .article-content h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+    .article-content h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 800; letter-spacing: -.01em; color: #0a0a0a; text-transform: uppercase; margin: 2rem 0 .75rem; }
+    .article-content p { font-family: Inter, system-ui, sans-serif; font-size: .95rem; line-height: 1.75; color: hsla(0,0%,4%,.75); margin-bottom: 1.25rem; }
+    .article-content ul, .article-content ol { font-family: Inter, system-ui, sans-serif; font-size: .95rem; line-height: 1.75; color: hsla(0,0%,4%,.75); margin: 0 0 1.25rem 1.5rem; }
+    .article-content li { margin-bottom: .5rem; }
+    .article-content a { color: #005f4b; text-decoration: underline; text-underline-offset: 3px; }
+    .article-content a:hover { color: #0a0a0a; }
+    .article-content strong { color: #0a0a0a; font-weight: 700; }
+    .warning-box { background: hsla(0,60%,45%,.07); border-left: 3px solid #991b1b; padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .warning-box p { color: #7f1d1d; margin: 0; font-size: .875rem; }
+    .zone-card { background: #fcfaf2; border: .5px solid hsla(0,0%,4%,.1); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; }
+    .zone-card h3 { margin-top: 0; border-top: none; }
+    .zone-tag { display: inline-block; font-family: Inter, system-ui, sans-serif; font-size: .625rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; border: .5px solid #0a0a0a; padding: .25rem .5rem; margin-bottom: 1rem; }
+    .article-intro { display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem; }
+    .article-intro-img { flex: 0 0 26%; }
+    .article-intro-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
+    .article-intro-text { flex: 1; min-width: 0; }
+    @media (max-width: 700px) { .article-intro { flex-direction: column; } .article-intro-img { flex: none; } }
+    .article-sidebar { position: sticky; top: 4rem; }
+    .sidebar-card { background: #0a0a0a; border-radius: 12px; padding: 2rem; margin-bottom: 1rem; }
+    .sidebar-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 900; color: #fcfaf2; text-transform: uppercase; letter-spacing: -.01em; margin-bottom: .75rem; }
+    .sidebar-card p { font-family: Inter, system-ui, sans-serif; font-size: .8rem; line-height: 1.65; color: hsla(48,62%,97%,.6); margin-bottom: 1.25rem; }
+    .sidebar-cta { display: block; font-family: Inter, system-ui, sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: #0a0a0a; background: #fcfaf2; padding: .875rem 1.5rem; border-radius: 100px; text-decoration: none; text-align: center; transition: background .2s ease; }
+    .sidebar-cta:hover { background: hsla(48,62%,97%,.8); }
+    .sidebar-toc { background: #fcfaf2; border: .5px solid hsla(0,0%,4%,.1); border-radius: 12px; padding: 1.75rem 2rem; }
+    .sidebar-toc h4 { font-family: Inter, system-ui, sans-serif; font-size: .625rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: hsla(0,0%,4%,.4); margin-bottom: 1rem; }
+    .sidebar-toc ul { list-style: none; margin: 0; padding: 0; }
+    .sidebar-toc li { border-top: .5px solid hsla(0,0%,4%,.08); }
+    .sidebar-toc li:first-child { border-top: none; }
+    .sidebar-toc a { display: block; font-family: Inter, system-ui, sans-serif; font-size: .8rem; color: #0a0a0a; text-decoration: none; padding: .625rem 0; transition: color .2s ease; }
+    .sidebar-toc a:hover { color: #005f4b; }
+    .feasibility-inline { background: #005f4b; border-radius: 12px; padding: 2.5rem; margin: 3rem 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .feasibility-inline-text h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 900; color: #fcfaf2; text-transform: uppercase; letter-spacing: -.01em; margin: 0 0 .5rem; }
+    .feasibility-inline-text p { font-family: Inter, system-ui, sans-serif; font-size: .875rem; color: hsla(48,62%,97%,.75); margin: 0; line-height: 1.6; }
+    .feasibility-inline-cta { flex-shrink: 0; font-family: Inter, system-ui, sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: #005f4b; background: #fcfaf2; padding: 1rem 2rem; border-radius: 100px; text-decoration: none; white-space: nowrap; transition: background .2s ease; }
+    .feasibility-inline-cta:hover { background: hsla(48,62%,97%,.85); }
+    .sidebar-tldr { background: #fcfaf2; border: .5px solid hsla(0,0%,4%,.1); border-radius: 12px; padding: 1.75rem 2rem; margin-bottom: 1rem; }
+    .sidebar-tldr-tag { font-family: Inter, system-ui, sans-serif; font-size: .625rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: hsla(0,0%,4%,.4); display: block; margin-bottom: .875rem; }
+    .sidebar-tldr-list { list-style: none; margin: 0; padding: 0; }
+    .sidebar-tldr-list li { font-family: Inter, system-ui, sans-serif; font-size: .8rem; line-height: 1.6; color: hsla(0,0%,4%,.7); padding: .5rem 0; border-bottom: .5px solid hsla(0,0%,4%,.08); padding-left: 1rem; position: relative; }
+    .sidebar-tldr-list li:last-child { border-bottom: none; }
+    .sidebar-tldr-list li::before { content: ''; position: absolute; left: 0; top: .9rem; width: 4px; height: 4px; border-radius: 50%; background: #005f4b; }
+    .sidebar-tldr-list li strong { color: #0a0a0a; }
+    [id] { scroll-margin-top: 90px; }
+    .faq-block { margin: 3rem 0; }
+    .faq-item { border-bottom: .5px solid hsla(0,0%,4%,.12); }
+    .faq-q { width: 100%; background: none; border: none; padding: 1.25rem 2rem 1.25rem 0; font-family: Inter, system-ui, sans-serif; font-size: .9rem; font-weight: 700; color: #0a0a0a; text-align: left; cursor: pointer; position: relative; line-height: 1.4; }
+    .faq-q::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.25rem; font-weight: 300; color: hsla(0,0%,4%,.4); }
+    .faq-q[aria-expanded="true"]::after { content: '-'; }
+    .faq-a { display: none; padding: 0 0 1.25rem; }
+    .faq-a.is-open { display: block; }
+    .faq-a p { margin-bottom: 0; }
+    @media (max-width: 900px) { .article-body { grid-template-columns: 1fr; } .article-sidebar { position: static; } .feasibility-inline { flex-direction: column; } }
+  </style>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pragmaticplanning.co.nz/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "News and Advice",
+        "item": "https://pragmaticplanning.co.nz/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "5 Costly Mistakes Property Buyers Make in Queenstown",
+        "item": "https://pragmaticplanning.co.nz/5-costly-mistakes-property-buyers-queenstown/"
+      }
+    ]
+  }
+  </script></head>
+<body class="bg-canvas text-ink font-sans">
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-label" aria-hidden="true"></div>
+
+  <nav class="mono-line-b sticky top-0 z-50 bg-canvas">
+    <div class="max-w-editorial mx-auto px-6 flex items-center justify-between h-14">
+      <a href="index.html" class="font-serif text-sm font-bold tracking-mono uppercase">Pragmatic Planning</a>
+      <!-- Desktop nav: hidden on mobile -->
+      <div class="desktop-nav flex items-center gap-8 text-xs tracking-mono uppercase">
+        <a href="about.html">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact" class="border border-ink px-4 py-2 rounded-full hover:bg-ink hover:text-canvas transition-colors duration-200">Get Started</a>
+      </div>
+      <!-- Hamburger: visible on mobile only -->
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="2" y1="6" x2="20" y2="6"/>
+          <line x1="2" y1="11" x2="20" y2="11"/>
+          <line x1="2" y1="16" x2="20" y2="16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <!-- Mobile menu overlay + drawer -->
+  <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+    <div class="mobile-menu-drawer">
+      <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="3" x2="17" y2="17"/>
+          <line x1="17" y1="3" x2="3" y2="17"/>
+        </svg>
+      </button>
+      <nav class="mobile-nav-links" aria-label="Mobile navigation">
+        <a href="about.html">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Get Started</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="article-hero mono-line-b">
+    <div class="article-hero-left">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#projects">Projects</a> &nbsp;/&nbsp; Project 01
+      </div>
+      <div class="article-meta">
+        <span class="article-tag">[Project]</span>
+        <span>Queenstown Lakes</span>
+        <span>Resource Consent</span>
+      </div>
+      <h1 class="article-headline">Project Title</h1>
+      <p class="article-standfirst">A short description of the project and what was achieved. Replace with real project details from Richard.</p>
+    </div>
+    <div class="hero-tldr">
+      <span class="hero-tldr-tag">[Project Summary]</span>
+      <ul class="hero-tldr-list">
+        <li><strong>Location:</strong> Queenstown / Wanaka</li>
+        <li><strong>Type:</strong> Resource Consent</li>
+        <li><strong>Outcome:</strong> Granted</li>
+        <li><strong>Timeframe:</strong> TBC</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <article class="article-content">
+
+      <div class="article-intro">
+        <div class="article-intro-text">
+          <p>Project background goes here. Describe the client's situation, the planning challenge, and why they approached Pragmatic Planning.</p>
+        </div>
+      </div>
+
+      <h2>The Challenge</h2>
+      <p>Describe the planning challenge here. What was the client trying to achieve and what made it complex?</p>
+
+      <h2>Our Approach</h2>
+      <p>Describe how Pragmatic Planning approached the application. What was the strategy, who was involved, and how was it managed?</p>
+
+      <h2>The Outcome</h2>
+      <p>Resource consent was granted. Describe the result, timeframe, and any notable aspects of the decision.</p>
+
+      <!-- CTA -->
+      <div class="feasibility-inline">
+        <div class="feasibility-inline-text">
+          <h3>Have a Similar Project?</h3>
+          <p>We offer free, no-obligation advice on your planning situation. Get in touch to discuss your project.</p>
+        </div>
+        <a href="index.html#contact" class="feasibility-inline-cta">Discuss Your Project</a>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+
+      <div class="sidebar-card">
+        <h3>Discuss Your Project</h3>
+        <p>Richard offers free, no-obligation advice on resource consents across Queenstown Lakes. Get in touch to find out what is possible.</p>
+        <a href="index.html#contact" class="sidebar-cta">Contact Richard</a>
+      </div>
+
+      <div class="sidebar-toc">
+        <h4>[Project Details]</h4>
+        <ul>
+          <li>Location: Queenstown Lakes</li>
+          <li>Type: Resource Consent</li>
+          <li>Outcome: Granted</li>
+          <li>Timeframe: TBC</li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <footer class="mono-line py-10">
+    <div class="max-w-editorial mx-auto px-6">
+      <div class="pp-footer-row">
+
+        <div>
+          <p class="text-xs tracking-mono uppercase"><span class="font-bold">Pragmatic Planning</span> <span class="opacity-50">&copy; 2026 Queenstown &bull; W&#257;naka</span></p>
+          <p class="text-xs tracking-mono uppercase opacity-50 mt-1">H&#257;wea &bull; Arrowtown &bull; Glenorchy &bull; Kingston</p>
+        </div>
+
+        <div class="text-xs tracking-mono uppercase pp-footer-mid">
+          <p>A Town Planning Consultancy</p>
+          <p style="margin-top:.25rem;">for the Outcomes Obsessed.</p>
+        </div>
+
+        <div class="flex flex-col text-xs tracking-mono uppercase opacity-60" style="flex-shrink:0;">
+          <div class="footer-contact-row">
+            <a href="mailto:info@pragmaticplanning.co.nz" class="hover:opacity-100 transition-opacity">info@pragmaticplanning.co.nz</a>
+            <span class="footer-phone-linkedin">
+              <a href="tel:+64211043405" class="hover:opacity-100 transition-opacity">021 104 3405</a>
+              <a href="https://www.linkedin.com/in/richardkempnz" target="_blank" rel="noopener" class="hover:opacity-100 transition-opacity">LinkedIn</a>
+            </span>
+          </div>
+          <div style="text-align:center;margin-top:.25rem;">
+            <a href="blog.html" class="hover:opacity-100 transition-opacity">News</a>
+            <a href="privacy-policy.html" class="hover:opacity-100 transition-opacity">Privacy Policy</a>
+            <a href="disclaimer.html" class="hover:opacity-100 transition-opacity">Disclaimer</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/gsap.min.js"></script>
+  <!-- Mobile menu toggle -->
+  <script>
+    (function () {
+      var btn = document.getElementById('hamburger-btn');
+      var overlay = document.getElementById('mobile-menu');
+      var closeBtn = document.getElementById('mobile-menu-close');
+      var links = overlay.querySelectorAll('.mobile-nav-links a');
+      function openMenu() { document.body.classList.add('mobile-menu-open'); overlay.setAttribute('aria-hidden', 'false'); btn.setAttribute('aria-expanded', 'true'); }
+      function closeMenu() { document.body.classList.remove('mobile-menu-open'); overlay.setAttribute('aria-hidden', 'true'); btn.setAttribute('aria-expanded', 'false'); }
+      btn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) closeMenu(); });
+      links.forEach(function (a) { a.addEventListener('click', closeMenu); });
+    })();
+  </script>
+
+  <script src="assets/js/cursor.js"></script>
+  <script>
+    const faqButtons = document.querySelectorAll('.faq-q');
+    faqButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        faqButtons.forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('is-open');
+        });
+        if (!isOpen) {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.nextElementSibling.classList.add('is-open');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
