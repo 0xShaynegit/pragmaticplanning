@@ -365,7 +365,7 @@
 
     .richard-card {
       display: flex;
-      align-items: flex-start;
+      align-items: stretch;
       background: #fcfaf2;
       border: .5px solid #fcfaf2;
       border-radius: 16px;
@@ -429,11 +429,12 @@
       width: 480px;
       flex-shrink: 0;
       padding: 0 2rem 0 0;
-      align-self: flex-start;
     }
     .richard-card-photo img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: right bottom;
       display: block;
     }
     .services-grid { padding-bottom: 3rem; }
