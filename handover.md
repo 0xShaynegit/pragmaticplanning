@@ -1,6 +1,6 @@
 # Pragmatic Planning - Handover
 
-**Date:** 06 June 2026
+**Date:** 09 June 2026
 **Status:** Live on workers.dev - pending custom domain connection
 
 ---
@@ -11,36 +11,34 @@ Site is live at: `https://pragmaticplanning.slrclaude.workers.dev`
 
 ---
 
-## Recent Changes (06 June)
+## Homepage Section Order
 
-### Homepage Restructure
-Page layout - section order:
 1. Hero
-2. Services (4x cards, equal height)
+2. Services (4x cards - SEE PROJECT cursor NOT on these)
 3. Why Pragmatic Planning (values grid - dark bg)
-4. Recent Projects (4x placeholder cards - content TBC from Richard)
-5. Testimonials (3 existing quotes - dark bg)
-6. About (Pragmatic definition + Richard card - dark bg)
-7. Google Reviews (live - dark bg)
-8. Contact
+4. Recent Projects (4x placeholder cards - SEE PROJECT cursor on all four)
+5. Testimonials (3 quotes + Google Reviews stars block - dark bg)
+6. About (Richard card only - dark bg) - definition block removed
+7. Contact
 
 ### Navigation
 - Links: About | Services | Airbnb & Short-Term Rentals | Projects | Discuss Your Project
 - Contact bar above nav: phone + email always visible (dark strip)
 - Blog removed from nav; "News" link in footer
+- All non-index pages use index.html header and footer (updated 09 June)
 
-### Hero
-- Eyebrow: QUEENSTOWN LAKES PLANNING SPECIALISTS
-- New subtext copy
-- Credentials line: 500+ Planning Approvals Secured · Queenstown Based · Former QLDC Planner
-- CTA: Discuss Your Project
+### About Section (Homepage)
+- Single richard-card, no definition block
+- Copy: Founded by Richard Kemp, 500+ approvals, former QLDC planner, established 2015
+- CTA: "Learn More" links to about.html
 
-### Live Google Reviews Section
-- Fetches from `/api/reviews` - handled by `_worker.js` in project root
-- `_worker.js` intercepts `/api/reviews`, calls Google Places API server-side, serves static assets for everything else
-- Full review text shown, no truncation
-- Footer shows live rating + review count
-- "Read All Reviews on Google" button links to Google profile
+### About Page
+- Stats updated: 500+ planning approvals (was 250+), 2015 founding confirmed
+- All meta descriptions, JSON-LD, hero stat, timeline copy updated
+
+### Google Reviews Button
+- Links to Google Maps business profile
+- URL includes `#lrd=` hash to open reviews panel
 
 ---
 
@@ -49,36 +47,44 @@ Page layout - section order:
 ### Cloudflare Worker
 - Worker name: `pragmaticplanning`
 - `_worker.js` in project root handles API routing
-- `GOOGLE_API_KEY` bound as a secret directly on the Worker (set via API)
+- `GOOGLE_API_KEY` bound as a secret directly on the Worker
 - `.assetsignore` excludes `_worker.js` and `_worker/` from static assets
+- No CORS references in code - variable named `responseHeaders`
 
-### Google Places API
+### Google API Keys
+- **Reviews key**: Server-side only, stored as Worker secret `GOOGLE_API_KEY` (rolled twice)
+- **Feasibility key**: `AIzaSyBc6b_bGZ-wrPDkRZm3YRKXET-jBqyTA9s` - in blog.html, restricted to workers.dev domain
 - Place ID: `ChIJa8tLe4Md1akRE1bdhNsvO_g`
-- API key restriction: **None** (key is server-side only, never exposed to browser)
-- Key stored as Worker secret `GOOGLE_API_KEY`
+
+### Feasibility Engine
+- Lives on blog.html (removed from homepage)
+- Google Maps JS API loaded without `loading=async` (required for Places autocomplete timing)
+- QLDC locality list includes: jack's point, frankton, fernhill, kelvin heights, lake hayes, shotover, closeburn, albert town, hawea flat, makarora, cardrona, etc.
+- Checks adminArea, locality, sublocality AND formatted_address for QLDC detection
 
 ### Known Issue
-- `assets/css/input.css` has a pre-existing build error: `@apply text-ink` in `@layer base` - `text-ink` not defined as Tailwind utility. `main.css` must be patched directly. Fix: define `ink` colour in `tailwind.config.js`.
+- `assets/css/input.css` has a pre-existing build error: `@apply text-ink` in `@layer base`. `main.css` must be patched directly. Fix: define `ink` colour in `tailwind.config.js`.
 
 ---
 
 ## Pending
 
 - **Recent Projects**: 4x placeholder cards need real content from Richard
-- **Analytics token**: Replace `REPLACE_WITH_TOKEN` in `index.html` with Cloudflare Web Analytics token
+- **Analytics token**: Replace `REPLACE_WITH_TOKEN` in all HTML files with Cloudflare Web Analytics token
 - **Custom domain**: Connect `pragmaticplanning.co.nz` to Cloudflare Workers deployment
+- **Google Business Profile**: Richard to remove street address to prevent property listings appearing behind reviews panel
 
 ## On Domain Go-Live
 1. `_worker.js` already includes `pragmaticplanning.co.nz` in allowed origins
 2. No changes needed to `reviews.js` - uses relative `/api/reviews` path
-3. Replace analytics token
+3. Replace analytics token in all HTML files
 4. Test Core Web Vitals
 
 ---
 
 ## Git - Latest Commits
-- `48cc508` - Show full review text
-- `a90ac1d` - Trigger redeploy
-- `f58d94b` - Add .assetsignore
-- `b136a7b` - Fix reviews API via _worker.js
-- `5cbca61` - Add Google Reviews section
+- `67d38f4` - Add SEE PROJECT cursor label to project cards
+- `91c88c6` - Update About page stats: 500+ approvals, 2015 founding
+- `475237b` - Trim About section to single richard-card with new copy
+- `4e0b1d1` - Add nav contact bar CSS to all non-index pages
+- `ac74a9b` - Update all pages to use header and footer from index.html
