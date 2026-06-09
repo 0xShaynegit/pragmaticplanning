@@ -6,6 +6,7 @@
   "main": "_worker.js",
 
   "assets": {
-    "directory": "./"
+    "directory": "./",
+    "binding": "ASSETS"
   }
 }
