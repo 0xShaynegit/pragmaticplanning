@@ -839,9 +839,22 @@
               </div>
             </div>
 
+            <!-- Honeypot - hidden from humans, traps bots -->
+            <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+              <label for="contact-website">Website</label>
+              <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
             <div class="form-submit-row">
-              <button type="submit" class="form-submit">Send Enquiry</button>
+              <button type="submit" class="form-submit" id="contact-submit">Send Enquiry</button>
               <p class="form-note">Planning advice is site-specific. Including your property address helps us provide more accurate and useful guidance from the outset.</p>
+            </div>
+
+            <div id="contact-success" style="display:none;margin-top:1rem;padding:1rem;background:#d4edda;color:#155724;border-radius:4px;font-size:0.875rem;">
+              Thanks, your enquiry has been sent. Richard will be in touch shortly.
+            </div>
+            <div id="contact-error" style="display:none;margin-top:1rem;padding:1rem;background:#f8d7da;color:#721c24;border-radius:4px;font-size:0.875rem;">
+              Something went wrong. Please email us directly at <a href="mailto:info@pragmaticplanning.co.nz" style="color:#721c24;">info@pragmaticplanning.co.nz</a>.
             </div>
 
           </form>
@@ -850,6 +863,56 @@
       </div>
     </div>
   </section>
+
+  <!-- Contact form -->
+  <script>
+    (function () {
+      var form = document.querySelector('.contact-form');
+      var btn = document.getElementById('contact-submit');
+      var successEl = document.getElementById('contact-success');
+      var errorEl = document.getElementById('contact-error');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        successEl.style.display = 'none';
+        errorEl.style.display = 'none';
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        var data = {
+          name: form.querySelector('[name="name"]').value,
+          email: form.querySelector('[name="email"]').value,
+          phone: form.querySelector('[name="phone"]').value,
+          address: form.querySelector('[name="address"]').value,
+          message: form.querySelector('[name="message"]').value,
+          website: form.querySelector('[name="website"]').value,
+        };
+
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        })
+          .then(function (res) { return res.json(); })
+          .then(function (json) {
+            if (json.ok) {
+              successEl.style.display = 'block';
+              form.reset();
+            } else {
+              errorEl.querySelector('a') || (errorEl.innerHTML = (json.error || 'Something went wrong.') + ' Please email us directly at <a href="mailto:info@pragmaticplanning.co.nz" style="color:#721c24;">info@pragmaticplanning.co.nz</a>.');
+              errorEl.style.display = 'block';
+            }
+          })
+          .catch(function () {
+            errorEl.style.display = 'block';
+          })
+          .finally(function () {
+            btn.disabled = false;
+            btn.textContent = 'Send Enquiry';
+          });
+      });
+    })();
+  </script>
 
   <!-- Mobile menu toggle -->
   <script>
