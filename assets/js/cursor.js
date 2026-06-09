@@ -23,11 +23,15 @@
   const labelXSet = gsap.quickSetter(label, 'x', 'px');
   const labelYSet = gsap.quickSetter(label, 'y', 'px');
 
-  // Walk up DOM from element to find the nearest opaque background colour
+  // Walk up DOM to find nearest background with alpha > 0.5 (ignores low-opacity overlays)
   function getBgColor(el) {
     while (el && el !== document.documentElement) {
       const bg = window.getComputedStyle(el).backgroundColor;
-      if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') return bg;
+      if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
+        const m = bg.match(/[\d.]+/g);
+        const alpha = m && m.length >= 4 ? parseFloat(m[3]) : 1;
+        if (alpha > 0.5) return bg;
+      }
       el = el.parentElement;
     }
     return 'rgb(252, 250, 242)'; // canvas fallback
