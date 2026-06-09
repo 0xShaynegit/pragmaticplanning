@@ -2,7 +2,7 @@ const PLACE_ID = "ChIJa8tLe4Md1akRE1bdhNsvO_g";
 
 const ALLOWED_ORIGINS = [
   "https://pragmaticplanning.co.nz",
-  "https://pragmaticplanning.slrclaude.workers.dev"
+  "https://pragmaticplanning.richmannz.workers.dev"
 ];
 
 function getAllowedOrigin(request) {
