@@ -941,6 +941,7 @@
       .footer-phone-linkedin { display: flex; gap: 1.5rem; margin-top: .25rem; }
       .pp-footer-row a { min-height: 44px; display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; }
     }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
   </style>
 </head>
 <body class="bg-canvas text-ink font-sans">
@@ -1006,7 +1007,10 @@
           <a href="index.html">Home</a> &nbsp;/&nbsp; About
         </div>
         <span class="ab-hero-tag">[About]</span>
-        <h1 class="ab-hero-h1">The Inside&#8209;Out<br>Advantage</h1>
+        <h1 class="ab-hero-h1">
+          <span class="visually-hidden">Richard Kemp, Town Planning Consultant Queenstown</span>
+          <span aria-hidden="true">The Inside&#8209;Out<br>Advantage</span>
+        </h1>
         <p class="ab-hero-standfirst">Richard Kemp spent years inside the QLDC system, processing applications, sitting in the meetings where projects get picked apart, and learning exactly what turns a No into a Granted. Now he works for you.</p>
 
         <div class="ab-stats">
