@@ -1,8 +1,7 @@
-// cursor.js — GSAP magnetic cursor with context label reveals
+// cursor.js   GSAP magnetic cursor with dynamic dark/light background detection
 // Requires GSAP loaded before this script.
 
 (function () {
-  // Only run on non-touch devices
   if (window.matchMedia('(hover: none)').matches) return;
 
   const cursor = document.querySelector('.cursor');
@@ -11,7 +10,6 @@
 
   if (!cursor || !ring || !label) return;
 
-  // Position cursor at centre to avoid flash from top-left on load
   const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
   const mouse = { x: pos.x, y: pos.y };
   const ringPos = { x: pos.x, y: pos.y };
@@ -25,40 +23,55 @@
   const labelXSet = gsap.quickSetter(label, 'x', 'px');
   const labelYSet = gsap.quickSetter(label, 'y', 'px');
 
-  // Dark sections where cursor should flip to Canvas colour
-  const darkSections = new Set(['hero', 'why-us']);
+  // Walk up DOM from element to find the nearest opaque background colour
+  function getBgColor(el) {
+    while (el && el !== document.documentElement) {
+      const bg = window.getComputedStyle(el).backgroundColor;
+      if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') return bg;
+      el = el.parentElement;
+    }
+    return 'rgb(252, 250, 242)'; // canvas fallback
+  }
+
+  // Returns true if an rgb/rgba colour string is dark (luminance < 0.4)
+  function isDark(rgb) {
+    const m = rgb.match(/[\d.]+/g);
+    if (!m) return false;
+    const r = parseInt(m[0]) / 255;
+    const g = parseInt(m[1]) / 255;
+    const b = parseInt(m[2]) / 255;
+    const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    return luminance < 0.4;
+  }
 
   window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
 
-    // Section-aware colour swap
     const el = document.elementFromPoint(e.clientX, e.clientY);
-    const section = el && el.closest('section');
-    const onDark = section && darkSections.has(section.id) && !el.closest('.richard-card');
-    cursor.classList.toggle('on-dark', onDark);
-    ring.classList.toggle('on-dark', onDark);
+    if (el) {
+      const bg = getBgColor(el);
+      const onDark = isDark(bg);
+      cursor.classList.toggle('on-dark', onDark);
+      ring.classList.toggle('on-dark', onDark);
+    }
   });
 
   gsap.ticker.add(() => {
-    // Dot follows instantly
     pos.x += (mouse.x - pos.x) * 0.9;
     pos.y += (mouse.y - pos.y) * 0.9;
     dotXSet(pos.x);
     dotYSet(pos.y);
 
-    // Ring follows with lag
     ringPos.x += (mouse.x - ringPos.x) * 0.12;
     ringPos.y += (mouse.y - ringPos.y) * 0.12;
     ringXSet(ringPos.x);
     ringYSet(ringPos.y);
 
-    // Label tracks mouse directly
     labelXSet(mouse.x + 20);
     labelYSet(mouse.y - 10);
   });
 
-  // Context label reveals on [data-cursor-label] elements
   document.querySelectorAll('[data-cursor-label]').forEach((el) => {
     el.addEventListener('mouseenter', () => {
       const text = el.dataset.cursorLabel;
@@ -73,7 +86,6 @@
     });
   });
 
-  // Shrink on mousedown
   document.addEventListener('mousedown', () => {
     gsap.to(cursor, { scale: 0.6, duration: 0.1 });
   });
