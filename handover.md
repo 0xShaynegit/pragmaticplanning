@@ -1,6 +1,6 @@
 # Pragmatic Planning - Handover
 
-**Date:** 09 June 2026 (updated x5)
+**Date:** 09 June 2026 (updated x6)
 **Status:** Live on workers.dev - pending custom domain connection
 
 ---
@@ -127,7 +127,37 @@ All 5 audit items actioned:
 
 Note: statistics in service page body copy reference QLDC rules and RMA directly in context but do not have inline hyperlinks to source documents. Adding source links to body stats is a future improvement if AI citation rate needs further boosting.
 
+## Contact Form (added 09 June 2026)
+
+- `/api/contact` endpoint added to `_worker.js`
+- Sends to `richard@pragmaticplanning.co.nz` via Resend API
+- Reply-to set to submitter's email so Richard can reply directly
+- Honeypot spam protection (hidden `website` field)
+- Input validation and sanitisation in Worker
+- Success/error UI states on form in `index.html`
+- `RESEND_API_KEY` stored as Worker secret on Richard's Cloudflare account
+- `pragmaticplanning.co.nz` verified in Resend dashboard
+- From address: `noreply@pragmaticplanning.co.nz`
+
+## GitHub Actions (added 09 June 2026)
+
+- `.github/workflows/deploy.yml` - auto-deploys to Cloudflare Workers on every push to `main`
+- `CLOUDFLARE_API_TOKEN` stored as GitHub repo secret
+- No manual `wrangler deploy` needed going forward
+
+## Infrastructure Notes
+
+- Worker now on Richard's Cloudflare account: `pragmaticplanning.richmannz.workers.dev`
+- Git remote updated to `https://github.com/richmannz/pragmaticplanning.git`
+- `.assetsignore` updated to exclude `.git/`, `.md/`, `node_modules/` from asset uploads
+
+---
+
 ## Git - Latest Commits
+- `881abb6` - ci: add GitHub Actions auto-deploy to Cloudflare Workers on push to main
+- `7f2d130` - fix: update CORS allowed origin to richmannz.workers.dev
+- `7f78db7` - fix: exclude .git, .md, node_modules from Workers asset upload
+- `f855c23` - feat: Contact form with Resend email delivery
 - `3cce1ad` - AI SEO: FAQPage schema, author/date on Service schema, llms.txt, services.md
 - `03d7b32` - Update handover.md
 - `0fd06bd` - Convert fonts to WOFF2
