@@ -1,6 +1,6 @@
 # Pragmatic Planning - Handover
 
-**Date:** 09 June 2026 (updated x4)
+**Date:** 09 June 2026 (updated x5)
 **Status:** Live on workers.dev - pending custom domain connection
 
 ---
@@ -116,7 +116,20 @@ Skipped (still pending):
 - Analytics token: replace `REPLACE_WITH_TOKEN` across all 22 HTML files once Cloudflare token available
 - Font WOFF2 files exist at `assets/fonts/` -- TTF files retained as fallback
 
+## AI SEO (09 June 2026)
+
+All 5 audit items actioned:
+- **FAQPage schema** added to all 4 service pages. 4 Q&A pairs per page extracted from existing accordion content. Directly extractable by Google AI Overviews and Perplexity.
+- **datePublished + dateModified** (2026-06-09) added to Service schema on all 4 service pages.
+- **Author attribution** (Richard Kemp, Town Planning Consultant, with about/ URL) added to Service schema on all 4 service pages.
+- **`llms.txt`** created at site root. Gives AI systems quick context: what the business does, key facts (500+, 15 years, 2015), all service page URLs.
+- **`services.md`** created at site root. Machine-readable structured service descriptions with timeframes and pricing signals for AI agents.
+
+Note: statistics in service page body copy reference QLDC rules and RMA directly in context but do not have inline hyperlinks to source documents. Adding source links to body stats is a future improvement if AI citation rate needs further boosting.
+
 ## Git - Latest Commits
+- `3cce1ad` - AI SEO: FAQPage schema, author/date on Service schema, llms.txt, services.md
+- `03d7b32` - Update handover.md
 - `0fd06bd` - Convert fonts to WOFF2
 - `4645a50` - SEO fixes: titles, H1s, schema type, sitemap, Airbnb meta
 - `6026d00` - Fix 250+ to 500+ in homepage meta descriptions
