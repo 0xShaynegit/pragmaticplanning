@@ -1,6 +1,6 @@
 # Pragmatic Planning - Handover
 
-**Date:** 09 June 2026 (updated x6)
+**Date:** 09 June 2026 (updated x7)
 **Status:** Live on workers.dev - pending custom domain connection
 
 ---
@@ -138,6 +138,15 @@ Note: statistics in service page body copy reference QLDC rules and RMA directly
 - `RESEND_API_KEY` stored as Worker secret on Richard's Cloudflare account
 - `pragmaticplanning.co.nz` verified in Resend dashboard
 - From address: `noreply@pragmaticplanning.co.nz`
+- Delivery confirmed working 09 June 2026
+
+### DNS fixes applied (09 June 2026)
+- Cloudflare Email Routing disabled (was intercepting inbound mail)
+- Duplicate DMARC record removed
+- SPF cleaned up: `v=spf1 include:_spf.google.com include:resend.com ~all`
+- Old cPanel records removed (`default._domainkey`, `websitewelcome.com` SPF include)
+- Google Workspace DKIM signing enabled in Google Admin (Apps > Gmail > Authenticate email)
+- MX records confirmed pointing to Google
 
 ## GitHub Actions (added 09 June 2026)
 
