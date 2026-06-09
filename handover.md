@@ -1,6 +1,6 @@
 # Pragmatic Planning - Handover
 
-**Date:** 09 June 2026 (updated x3)
+**Date:** 09 June 2026 (updated x4)
 **Status:** Live on workers.dev - pending custom domain connection
 
 ---
@@ -98,7 +98,29 @@ Content sourced from QLDC rules and user-supplied briefs. Airbnb page covers act
 - Root cause of cards appearing misaligned: GSAP stagger in `assets/js/animate.js` was animating card 01 in first (y:32, 0.13s stagger) while card 02 sat at rest, creating apparent height difference during entrance.
 - Fix: removed stagger so all 4 cards animate in together. CSS hover `transform: none` override also added to `#services` but the JS stagger was the real culprit.
 
+## SEO Fixes (09 June 2026)
+
+All 8 audit items actioned:
+- Homepage title changed to `Town Planning Consultants Queenstown & Wanaka` (was duplicate of resource consents page)
+- 4 service pages added to sitemap.xml with 2026-06-09 lastmod, priority 0.8
+- Airbnb page title/meta rewritten -- meth references removed, clean keyword title
+- Subdivisions title: `Subdivision Consent Queenstown & Wanaka` (47 chars)
+- Planning Advice title: `Planning Advice Queenstown & Wanaka` (36 chars)
+- Homepage H1: visually-hidden keyword H1 added, brand line `We Get It Granted.` preserved visually
+- About H1: same pattern -- `Richard Kemp, Town Planning Consultant Queenstown` hidden
+- LocalBusiness schema upgraded to `[`LocalBusiness`, `ProfessionalService`]`
+- Fonts converted to WOFF2: PlayfairDisplay and Inter variable fonts copied from master vault, @font-face in main.css updated, preload tags on index.html updated
+- Numbers audit: 250+ corrected to 500+ in homepage meta/OG/Twitter descriptions
+
+Skipped (still pending):
+- Analytics token: replace `REPLACE_WITH_TOKEN` across all 22 HTML files once Cloudflare token available
+- Font WOFF2 files exist at `assets/fonts/` -- TTF files retained as fallback
+
 ## Git - Latest Commits
+- `0fd06bd` - Convert fonts to WOFF2
+- `4645a50` - SEO fixes: titles, H1s, schema type, sitemap, Airbnb meta
+- `6026d00` - Fix 250+ to 500+ in homepage meta descriptions
+- `82b1d1c` - Update Airbnb nav link to point directly to service page on all pages
 - `a71d5c7` - Remove stagger from service cards, all animate together
 - `909979d` - Reduce service card entrance animation y distance and stagger
 - `75ca848` - Reduce service card hover lift to 1px
