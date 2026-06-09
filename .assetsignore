@@ -1,2 +1,5 @@
 _worker.js
 _worker/
+.md/
+node_modules/
+.git/
